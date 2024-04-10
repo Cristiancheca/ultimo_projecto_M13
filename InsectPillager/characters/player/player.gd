@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Variables para el movimiento
-var speed = 200
+var speed = 170
 var velocity = Vector2()
 
 # Variables para el AnimatedSprite
