@@ -1,0 +1,21 @@
+[gd_scene format=2]
+
+[node name="mainmenu" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Button" type="Button" parent="Control"]
+margin_left = 384.0
+margin_top = 247.0
+margin_right = 657.0
+margin_bottom = 344.0
+text = "play"
+
+[node name="Label" type="Label" parent="Control"]
+margin_left = 427.0
+margin_top = 170.0
+margin_right = 590.0
+margin_bottom = 218.0
+text = "INSECT PILLAGER"
