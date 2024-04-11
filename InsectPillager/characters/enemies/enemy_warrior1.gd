@@ -1,18 +1,21 @@
 extends KinematicBody2D
 
-# Variables for movement
+# Variables para el movimiento
 var speed = 70  # Adjust as needed
 var player = null
 
-# Variables for AnimatedSprite
+# Variables para el daño
+var damage = 10
+
+# Variables para AnimatedSprite
 var animated_sprite
 
 func _ready():
-	# Get the AnimatedSprite
+	# Obtener el AnimatedSprite
 	animated_sprite = $AnimatedSprite
 
 	# Find the player within the scene
-	player = get_parent().get_node("player")  # Assuming the player is a sibling node named "player"
+	player = get_tree().get_nodes_in_group("player")[0]  # Assuming there's only one player in the group
 
 func _physics_process(delta):
 	if player:
@@ -36,3 +39,12 @@ func update_animation(direction):
 			animated_sprite.play("walk_down")
 		else:
 			animated_sprite.play("walk_up")
+
+func _on_Enemy_body_entered(body):
+	if body.is_in_group("player"):
+		player.recibir_danio(damage)
+
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("player"):
+		body.recibir_danio(damage)
