@@ -6,6 +6,8 @@ var player = null
 
 # Variables para el daño
 var damage = 10
+# Variables para la vida del enemigo
+var vida = 1
 
 # Variables para AnimatedSprite
 var animated_sprite
@@ -48,3 +50,11 @@ func _on_Enemy_body_entered(body):
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		body.recibir_danio(damage)
+# Método para recibir daño
+
+func recibir_danio(damage):
+	vida -= damage
+	if vida <= 0:
+		# Liberar el nodo cuando la vida llega a cero
+		$AnimatedSprite.visible = false
+		queue_free()
