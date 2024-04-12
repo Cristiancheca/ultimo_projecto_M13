@@ -49,6 +49,10 @@ func _ready():
 	# Connect the timeout signal to the method _on_SlashTimer_timeout
 	# Start the Timer
 	slash_timer.start()
+	if get_parent().name == "mercado":
+		$items.visible = false
+		$UI/ProgressBar.visible = false
+		pass
 
 func _physics_process(delta):
 	# Control de movimiento
