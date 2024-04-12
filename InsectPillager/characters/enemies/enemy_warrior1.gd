@@ -3,7 +3,7 @@ extends KinematicBody2D
 # Variables para el movimiento
 var speed = 70  # Adjust as needed
 var player = null
-
+var exp_orb_scene = preload("res://characters/ExpOrb.tscn")
 # Variables para el daño
 var damage = 10
 # Variables para la vida del enemigo
@@ -59,5 +59,9 @@ func recibir_danio(damage):
 	
 	if vida <= 0:
 		# Liberar el nodo cuando la vida llega a cero
+		# Spawn exp orb at enemy's position
+		var exp_orb = exp_orb_scene.instance()
+		exp_orb.position = global_position
+		get_parent().add_child(exp_orb)
 		$AnimatedSprite.visible = false
 		queue_free()

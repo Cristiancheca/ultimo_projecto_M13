@@ -6,10 +6,10 @@ var velocity = Vector2()
 
 # Variables para la vida del jugador
 var vida = 100
-
+var experience = 0
 # ProgressBar de la UI para mostrar la vida
 var vida_progressbar
-
+var exp_progressbar
 # Variables para el AnimatedSprite
 var animated_sprite
 # Variables for the slash animation
@@ -30,9 +30,11 @@ func _ready():
 
 	# Obtener el ProgressBar de la UI
 	vida_progressbar = $UI/ProgressBar
+	exp_progressbar = $UI/experience
 
 	# Inicializar el ProgressBar con la vida inicial del jugador
 	vida_progressbar.value = vida
+	exp_progressbar.value = experience
 
 	# Obtener las áreas 2D
 	left_area = $items/item_sword/left
@@ -41,8 +43,6 @@ func _ready():
 	right_area.set_monitorable(false)
 
 	# Conectar las señales de las áreas 2D
-	left_area.connect("body_entered", self, "_on_left_body_entered")
-	right_area.connect("body_entered", self, "_on_right_body_entered")
 
 	# Obtener el Timer node
 	slash_timer = $items/item_sword/Timer
@@ -101,6 +101,13 @@ func recibir_danio(damage):
 # Método llamado cuando el Timer termina
 # Método llamado cuando el Timer termina
 # Método llamado cuando el Timer termina
+
+func add_exp(amount):
+	experience += amount
+	exp_progressbar.value = experience
+	print("Player EXP:", experience)
+	# Add any additional logic for level up or UI updates here
+
 # Método llamado cuando el Timer termina
 func _on_Timer_timeout():
 	# Toggle entre los cortes de izquierda y derecha
