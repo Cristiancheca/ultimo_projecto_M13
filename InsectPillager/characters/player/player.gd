@@ -15,7 +15,7 @@ var animated_sprite
 # Variables for the slash animation
 var is_slashing = false
 var slash_direction = 1  # 1 for right, -1 for left
-var sword_damage = 100
+var sword_damage = 10
 
 # Variables for the Timer
 var slash_timer
@@ -100,11 +100,13 @@ func recibir_danio(damage):
 # Método llamado cuando el Timer termina
 func _on_Timer_timeout():
 	# Toggle entre los cortes de izquierda y derecha
-	if is_slashing:
+	if is_slashing == false:
 		# Dejar de cortar
-		is_slashing = false
+		is_slashing = true
 		left_area.set_monitorable(false)
 		right_area.set_monitorable(false)
+		left_area.set_monitoring(false)
+		right_area.set_monitoring(false)
 	else:
 		# Comenzar a cortar
 		is_slashing = true
@@ -113,29 +115,27 @@ func _on_Timer_timeout():
 			# Reproducir la animación de corte a la derecha
 			$items/item_sword/AnimatedSprite.play("right")
 			left_area.set_monitorable(false) # Desactivar detección de colisiones en el área izquierda
+			left_area.set_monitoring(false)
 			right_area.set_monitorable(true) # Activar detección de colisiones en el área derecha
-			
+			right_area.set_monitoring(true)
 			# Verificar si hay enemigos dentro del área derecha al iniciar el corte
-			for body in right_area.get_overlapping_bodies():
-				if body.is_in_group("enemy"):
-					body.recibir_danio(sword_damage)
-					
 		else:
 			# Reproducir la animación de corte a la izquierda
 			$items/item_sword/AnimatedSprite.play("left")
+			right_area.set_monitoring(false)
 			right_area.set_monitorable(false) # Desactivar detección de colisiones en el área derecha
 			left_area.set_monitorable(true) # Activar detección de colisiones en el área izquierda
-			
+			left_area.set_monitoring(true)
 			# Verificar si hay enemigos dentro del área izquierda al iniciar el corte
-			for body in left_area.get_overlapping_bodies():
-				if body.is_in_group("enemy"):
-					body.recibir_danio(sword_damage)
-
+			
 # Método llamado cuando el área 2D de la izquierda detecta una colisión
 func _on_left_body_entered(body):
 	if is_slashing:
 		if body.is_in_group("enemy"):
 			body.recibir_danio(sword_damage)
+		for body in left_area.get_overlapping_bodies():
+				if body.is_in_group("enemy"):
+					body.recibir_danio(sword_damage)
 	pass
 
 # Método llamado cuando el área 2D de la derecha detecta una colisión
@@ -143,4 +143,8 @@ func _on_right_body_entered(body):
 	if is_slashing:
 		if body.is_in_group("enemy"):
 			body.recibir_danio(sword_damage)
+		for body in left_area.get_overlapping_bodies():
+				if body.is_in_group("enemy"):
+					body.recibir_danio(sword_damage)
 	pass
+
