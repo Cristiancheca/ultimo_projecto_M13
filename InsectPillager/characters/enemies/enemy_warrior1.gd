@@ -63,5 +63,5 @@ func recibir_danio(damage):
 		var exp_orb = exp_orb_scene.instance()
 		exp_orb.position = global_position
 		get_parent().add_child(exp_orb)
-		$AnimatedSprite.visible = false
-		queue_free()
+		
+		call_deferred("queue_free")

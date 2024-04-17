@@ -106,6 +106,9 @@ func add_exp(amount):
 	experience += amount
 	exp_progressbar.value = experience
 	print("Player EXP:", experience)
+	if experience >= 10:
+		
+		pass
 	# Add any additional logic for level up or UI updates here
 
 # Método llamado cuando el Timer termina
@@ -121,10 +124,11 @@ func _on_Timer_timeout():
 	else:
 		# Comenzar a cortar
 		is_slashing = true
+		$items/item_sword/AnimatedSprite.play("right")
 		# Reproducir la animación de corte basada en la dirección
 		if slash_direction == 1:
 			# Reproducir la animación de corte a la derecha
-			$items/item_sword/AnimatedSprite.play("right")
+			$items/item_sword/AnimatedSprite.flip_h = false
 			left_area.set_monitorable(false) # Desactivar detección de colisiones en el área izquierda
 			left_area.set_monitoring(false)
 			right_area.set_monitorable(true) # Activar detección de colisiones en el área derecha
@@ -132,7 +136,7 @@ func _on_Timer_timeout():
 			# Verificar si hay enemigos dentro del área derecha al iniciar el corte
 		else:
 			# Reproducir la animación de corte a la izquierda
-			$items/item_sword/AnimatedSprite.play("left")
+			$items/item_sword/AnimatedSprite.flip_h = true
 			right_area.set_monitoring(false)
 			right_area.set_monitorable(false) # Desactivar detección de colisiones en el área derecha
 			left_area.set_monitorable(true) # Activar detección de colisiones en el área izquierda
