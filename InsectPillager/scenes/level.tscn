@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://assets/tilesets/MainLev2.0.png" type="Texture" id=1]
 [ext_resource path="res://characters/enemies/enemy_warrior1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://characters/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://characters/spawner.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=27]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -1099,3 +1100,15 @@ position = Vector2( 698, 268 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 603, 347 )
+
+[node name="spawner" parent="." instance=ExtResource( 4 )]
+position = Vector2( 606, 249 )
+
+[node name="spawner1" parent="." instance=ExtResource( 4 )]
+position = Vector2( 65, 435 )
+
+[node name="spawner2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1133, 457 )
+
+[node name="spawner3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 611, 720 )

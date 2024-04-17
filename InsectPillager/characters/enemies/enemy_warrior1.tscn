@@ -104,8 +104,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=20]
-radius = 13.3333
-height = 2.66667
+radius = 11.3333
+height = 3.99999
 
 [node name="enemy_warrior1" type="KinematicBody2D" groups=["enemy"]]
 scale = Vector2( 1.5, 1.5 )
@@ -119,13 +119,13 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 19 )
 animation = "walk_down"
-frame = 1
+frame = 3
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, 3.33333 )
+position = Vector2( 0, 4 )
 shape = SubResource( 20 )
 
 [node name="blood" type="CPUParticles2D" parent="."]

@@ -37,10 +37,6 @@ func _ready():
 	exp_progressbar.value = experience
 
 	# Obtener las áreas 2D
-	left_area = $items/item_sword/left
-	right_area = $items/item_sword/right
-	left_area.set_monitorable(false)
-	right_area.set_monitorable(false)
 
 	# Conectar las señales de las áreas 2D
 
@@ -113,53 +109,25 @@ func add_exp(amount):
 
 # Método llamado cuando el Timer termina
 func _on_Timer_timeout():
-	# Toggle entre los cortes de izquierda y derecha
-	if is_slashing == false:
-		# Dejar de cortar
-		is_slashing = true
-		left_area.set_monitorable(false)
-		right_area.set_monitorable(false)
-		left_area.set_monitoring(false)
-		right_area.set_monitoring(false)
-	else:
-		# Comenzar a cortar
-		is_slashing = true
-		$items/item_sword/AnimatedSprite.play("right")
-		# Reproducir la animación de corte basada en la dirección
-		if slash_direction == 1:
-			# Reproducir la animación de corte a la derecha
-			$items/item_sword/AnimatedSprite.flip_h = false
-			left_area.set_monitorable(false) # Desactivar detección de colisiones en el área izquierda
-			left_area.set_monitoring(false)
-			right_area.set_monitorable(true) # Activar detección de colisiones en el área derecha
-			right_area.set_monitoring(true)
-			# Verificar si hay enemigos dentro del área derecha al iniciar el corte
-		else:
-			# Reproducir la animación de corte a la izquierda
-			$items/item_sword/AnimatedSprite.flip_h = true
-			right_area.set_monitoring(false)
-			right_area.set_monitorable(false) # Desactivar detección de colisiones en el área derecha
-			left_area.set_monitorable(true) # Activar detección de colisiones en el área izquierda
-			left_area.set_monitoring(true)
-			# Verificar si hay enemigos dentro del área izquierda al iniciar el corte
-			
-# Método llamado cuando el área 2D de la izquierda detecta una colisión
-func _on_left_body_entered(body):
-	if is_slashing:
-		if body.is_in_group("enemy"):
-			body.recibir_danio(sword_damage)
-		for body in left_area.get_overlapping_bodies():
-				if body.is_in_group("enemy"):
-					body.recibir_danio(sword_damage)
-	pass
+	print("TIMER TIMEOUT")
+	yield(get_tree(), "idle_frame")  # Wait for the current frame to finish processing
+	$items/item_sword/AnimatedSprite.play("swipe")
+	$items/item_sword/Area2D.monitorable = true
+	$items/item_sword/Area2D.monitoring = true
+	yield($items/item_sword/AnimatedSprite, "animation_finished")
+	print("IS SLASHING FALSE")
+	$items/item_sword/AnimatedSprite.play("default")
+	$items/item_sword/Area2D.monitorable = false
+	$items/item_sword/Area2D.monitoring = false
+	
+	
+	$items/item_sword/Timer.start()
 
 # Método llamado cuando el área 2D de la derecha detecta una colisión
-func _on_right_body_entered(body):
-	if is_slashing:
-		if body.is_in_group("enemy"):
-			body.recibir_danio(sword_damage)
-		for body in left_area.get_overlapping_bodies():
-				if body.is_in_group("enemy"):
-					body.recibir_danio(sword_damage)
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("enemy"):
+		body.recibir_danio(sword_damage)
+	for body in $items/item_sword/Area2D.get_overlapping_bodies():
+			if body.is_in_group("enemy"):
+				body.recibir_danio(sword_damage)
 	pass
-
