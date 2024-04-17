@@ -1,29 +1,32 @@
 extends Node2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var enemy_scene = preload("res://characters/enemies/enemy_warrior1.tscn")
+var enemy_maggot = preload("res://characters/enemies/enemy_maggot.tscn")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	var new_enemy = enemy_scene.instance()
-	new_enemy.position = Vector2(606, 249)
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+	# Start the initial spawn
+	_on_Timer_timeout()
 
 func _on_Timer_timeout():
-	# Instancia un nuevo enemigo
-	var new_enemy = enemy_scene.instance()
-	 # Establece la posición inicial del enemigo (ajusta según sea necesario)
+	# Generate a random number between 0 and 1
+	var random_value = randf()
+
+	# Declare new_enemy variable outside the if-else block
+	var new_enemy 
+
+	# If the random value is less than or equal to 0.5, spawn enemy_warrior1
+	if random_value <= 0.5:
+		new_enemy = enemy_scene.instance()
+	else:
+		# Otherwise, spawn enemy_maggot
+		new_enemy = enemy_maggot.instance()
+
+	# Set the initial position of the enemy (adjust as needed)
 	new_enemy.position = global_position
-	 # Añade el enemigo al escenario
+
+	# Add the enemy to the scene
 	get_parent().add_child(new_enemy)
+
+	# Restart the timer for the next spawn
 	$Timer.start()
-	pass # Replace with function body.
+

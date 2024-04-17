@@ -12,6 +12,9 @@ var vida_progressbar
 var exp_progressbar
 # Variables para el AnimatedSprite
 var animated_sprite
+
+var seconds = 0
+var minutes = 0
 # Variables for the slash animation
 var is_slashing = false
 var slash_direction = 1  # 1 for right, -1 for left
@@ -19,6 +22,8 @@ var sword_damage = 10
 
 # Variables for the Timer
 var slash_timer
+#ITEMS!!!
+var item_sword = preload("res://characters/player/item_sword.tscn")
 
 # Áreas 2D para las colisiones con la espada
 var left_area
@@ -36,15 +41,9 @@ func _ready():
 	vida_progressbar.value = vida
 	exp_progressbar.value = experience
 
-	# Obtener las áreas 2D
-
-	# Conectar las señales de las áreas 2D
-
-	# Obtener el Timer node
-	slash_timer = $items/item_sword/Timer
-	# Connect the timeout signal to the method _on_SlashTimer_timeout
 	# Start the Timer
-	slash_timer.start()
+	$UI/Timer.start()
+	
 	if get_parent().name == "mercado":
 		$items.visible = false
 		$UI/ProgressBar.visible = false
@@ -108,26 +107,21 @@ func add_exp(amount):
 	# Add any additional logic for level up or UI updates here
 
 # Método llamado cuando el Timer termina
-func _on_Timer_timeout():
-	print("TIMER TIMEOUT")
-	yield(get_tree(), "idle_frame")  # Wait for the current frame to finish processing
-	$items/item_sword/AnimatedSprite.play("swipe")
-	$items/item_sword/Area2D.monitorable = true
-	$items/item_sword/Area2D.monitoring = true
-	yield($items/item_sword/AnimatedSprite, "animation_finished")
-	print("IS SLASHING FALSE")
-	$items/item_sword/AnimatedSprite.play("default")
-	$items/item_sword/Area2D.monitorable = false
-	$items/item_sword/Area2D.monitoring = false
-	
-	
-	$items/item_sword/Timer.start()
 
-# Método llamado cuando el área 2D de la derecha detecta una colisión
-func _on_Area2D_body_entered(body):
-	if body.is_in_group("enemy"):
-		body.recibir_danio(sword_damage)
-	for body in $items/item_sword/Area2D.get_overlapping_bodies():
-			if body.is_in_group("enemy"):
-				body.recibir_danio(sword_damage)
-	pass
+
+
+func _on_Button_pressed():
+	var item_instance = item_sword.instance()
+	$items.add_child(item_instance)
+	pass # Replace with function body.
+
+
+func _on_Timer_timeout():
+	seconds += 1
+	 # Calcula los minutos y segundos
+	minutes = seconds / 60
+	var remaining_seconds = seconds % 60
+	# Actualiza el texto del contador de tiempo
+	$UI/Label.text = str(minutes) + ":" + str(remaining_seconds).pad_zeros(2)
+	# Reinicia el temporizador para contar el siguiente segundo
+	$UI/Timer.start()

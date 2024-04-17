@@ -119,7 +119,6 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 19 )
 animation = "walk_down"
-frame = 3
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
