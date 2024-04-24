@@ -4,7 +4,7 @@ extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var sword_damage = 10
+var sword_damage = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

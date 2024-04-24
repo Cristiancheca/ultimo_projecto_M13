@@ -7,6 +7,7 @@ var velocity = Vector2()
 # Variables para la vida del jugador
 var vida = 100
 var experience = 0
+var inmune = false
 # ProgressBar de la UI para mostrar la vida
 var vida_progressbar
 var exp_progressbar
@@ -23,7 +24,7 @@ var sword_damage = 10
 # Variables for the Timer
 var slash_timer
 #ITEMS!!!
-var item_sword = preload("res://characters/player/item_sword.tscn")
+var item_sword = preload("res://characters/player/items/item_sword.tscn")
 
 # Áreas 2D para las colisiones con la espada
 var left_area
@@ -86,12 +87,16 @@ func update_animation():
 
 # Método para recibir daño
 func recibir_danio(damage):
-	vida -= damage
-	# Actualizar el valor del ProgressBar de la UI con la vida actual del jugador
-	vida_progressbar.value = vida
-	if vida <= 0:
-		# Aquí puedes añadir lógica para el manejo de la muerte del jugador
-		pass
+	if inmune == false:
+		vida -= damage
+		# Actualizar el valor del ProgressBar de la UI con la vida actual del jugador
+		vida_progressbar.value = vida
+		inmune = true
+		$inmune_light.visible = true
+		$Inmunity.start()
+		if vida <= 0:
+			# Aquí puedes añadir lógica para el manejo de la muerte del jugador
+			pass
 
 # Método llamado cuando el Timer termina
 # Método llamado cuando el Timer termina
@@ -125,3 +130,9 @@ func _on_Timer_timeout():
 	$UI/Label.text = str(minutes) + ":" + str(remaining_seconds).pad_zeros(2)
 	# Reinicia el temporizador para contar el siguiente segundo
 	$UI/Timer.start()
+
+
+func _on_Inmunity_timeout():
+	$inmune_light.visible = false
+	inmune = false
+	pass # Replace with function body.

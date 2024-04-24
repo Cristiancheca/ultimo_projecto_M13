@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://characters/player/items/item_sword.gd" type="Script" id=1]
+[ext_resource path="res://assets/sword_slash.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 2 )
+region = Rect2( 576, 1728, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 2 )
+region = Rect2( 768, 1728, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 2 )
+region = Rect2( 960, 1728, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 2 )
+region = Rect2( 384, 2112, 192, 192 )
+
+[sub_resource type="SpriteFrames" id=46]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 71 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), null ],
+"loop": true,
+"name": "swipe",
+"speed": 6.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=70]
+radius = 21.5
+height = 24.0
+
+[node name="item_sword" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.509804 )
+position = Vector2( -5.5, -3.5 )
+scale = Vector2( 0.605469, 0.541667 )
+frames = SubResource( 46 )
+playing = true
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 1 )
+rotation = 1.5708
+shape = SubResource( 70 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
