@@ -243,13 +243,13 @@ frames = SubResource( 40 )
 frame = 1
 playing = true
 
-[node name="Inmunity" type="Timer" parent="."]
-wait_time = 0.6
-
 [node name="Light" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.117647 )
+modulate = Color( 1, 1, 1, 0.184314 )
 position = Vector2( -1, 2.5 )
 texture = ExtResource( 5 )
+
+[node name="Inmunity" type="Timer" parent="."]
+wait_time = 0.6
 
 [node name="inmune_light" type="Sprite" parent="."]
 visible = false

@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_play_pressed():
-	get_tree().change_scene("res://scenes/mercado.tscn")
+	get_tree().change_scene("res://scenes/level.tscn")
