@@ -18,9 +18,6 @@ func _ready():
 
 
 func _on_play_pressed():
-<<<<<<< Updated upstream
-	get_tree().change_scene("res://scenes/level.tscn")
-=======
 	get_tree().change_scene("res://scenes/mercado.tscn")
 
 
@@ -59,4 +56,3 @@ func _on_Music_value_changed(value):
 
 func _on_Efects_value_changed(value):
 	Volumen(2,value)
->>>>>>> Stashed changes
