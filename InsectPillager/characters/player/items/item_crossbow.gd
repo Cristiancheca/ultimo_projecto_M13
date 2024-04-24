@@ -20,4 +20,5 @@ func _ready():
 func _on_spawn_timer_timeout():
 	# Instanciar la bala y agregarla al escenario
 	var new_bullet = bullet_scene.instance()
-	get_parent().get_parent().add_child(new_bullet)
+	new_bullet.position = $Node2D.global_position
+	get_parent().get_parent().get_parent().add_child(new_bullet)

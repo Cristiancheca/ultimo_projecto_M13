@@ -33,10 +33,9 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body):
 	# Aplicar daño al enemigo si colisiona con él
-	if body == target_enemy:
-		if body.is_in_group("enemy"):
-			body.recibir_danio(DAMAGE)
-			queue_free()
+	if body.is_in_group("enemy"):
+		body.recibir_danio(DAMAGE)
+		queue_free()
 	# Eliminar la bala después de la colisión
 	
 func _on_Timer_timeout():

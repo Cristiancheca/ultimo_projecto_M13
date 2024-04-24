@@ -240,7 +240,6 @@ color = Color( 0, 0, 0, 0.117647 )
 position = Vector2( -1.19209e-06, -2.02656e-06 )
 scale = Vector2( 0.375, 0.40625 )
 frames = SubResource( 40 )
-frame = 1
 playing = true
 
 [node name="Light" type="Sprite" parent="."]
@@ -264,8 +263,6 @@ margin_top = -62.5
 margin_right = 121.0
 margin_bottom = -42.5
 text = "GET"
-
-[node name="items" type="Node2D" parent="."]
 
 [node name="UI" type="Control" parent="."]
 margin_left = -129.0
@@ -338,6 +335,8 @@ margin_left = -6.0
 margin_top = -21.0
 margin_right = 46.0
 margin_bottom = 44.0
+
+[node name="items" type="Node2D" parent="."]
 
 [connection signal="timeout" from="Inmunity" to="." method="_on_Inmunity_timeout"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

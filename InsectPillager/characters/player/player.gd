@@ -7,6 +7,7 @@ var velocity = Vector2()
 # Variables para la vida del jugador
 var vida = 100
 var experience = 0
+var levelupchosse_scene = preload("res://characters/player/levelupchosse.tscn")
 var inmune = false
 # ProgressBar de la UI para mostrar la vida
 var vida_progressbar
@@ -51,6 +52,8 @@ func _ready():
 		pass
 
 func _physics_process(delta):
+	#LEVELUP
+	
 	# Control de movimiento
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_up"):
@@ -106,8 +109,11 @@ func add_exp(amount):
 	experience += amount
 	exp_progressbar.value = experience
 	print("Player EXP:", experience)
-	if experience >= 10:
-		
+	if experience == 10:
+		var levelup = levelupchosse_scene.instance()
+		$items.add_child(levelup)
+		experience = 0
+		exp_progressbar.value = experience
 		pass
 	# Add any additional logic for level up or UI updates here
 
@@ -116,8 +122,9 @@ func add_exp(amount):
 
 
 func _on_Button_pressed():
-	var item_instance = item_sword.instance()
-	$items.add_child(item_instance)
+	add_exp(10)
+#	var item_instance = item_sword.instance()
+#	$items.add_child(item_instance)
 	pass # Replace with function body.
 
 

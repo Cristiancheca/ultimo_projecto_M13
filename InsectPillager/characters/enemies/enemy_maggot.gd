@@ -62,6 +62,6 @@ func recibir_danio(damage):
 		# Spawn exp orb at enemy's position
 		var exp_orb = exp_orb_scene.instance()
 		exp_orb.position = global_position
-		get_parent().get_parent().add_child(exp_orb)
+		get_parent().get_parent().call_deferred("add_child", exp_orb)
 		
 		call_deferred("queue_free")

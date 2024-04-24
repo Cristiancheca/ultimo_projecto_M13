@@ -25,7 +25,8 @@ func _on_Timer_timeout():
 	new_enemy.position = global_position
 
 	# Add the enemy to the scene
-	get_parent().add_child(new_enemy)
+	
+	get_parent().call_deferred("add_child", new_enemy)
 
 	# Restart the timer for the next spawn
 	$Timer.start()
