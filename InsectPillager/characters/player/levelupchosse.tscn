@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/weapon_free.png" type="Texture" id=1]
 [ext_resource path="res://characters/player/levelupchosse.gd" type="Script" id=2]
 [ext_resource path="res://assets/bag.png" type="Texture" id=3]
+[ext_resource path="res://assets/new_dynamicfont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/shadow.png" type="Texture" id=5]
+[ext_resource path="res://assets/new_styleboxtexture.tres" type="StyleBox" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -54,43 +57,77 @@ scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 2 )
 
 [node name="Bag" type="Sprite" parent="."]
-position = Vector2( 552, 314 )
-scale = Vector2( 2.925, 2.72976 )
+modulate = Color( 0.917647, 0.905882, 0.878431, 1 )
+position = Vector2( 552, 311.25 )
+scale = Vector2( 2.925, 2.88095 )
 texture = ExtResource( 3 )
 
 [node name="option1" type="Button" parent="."]
-margin_left = 542.5
-margin_top = 227.5
-margin_right = 628.5
-margin_bottom = 257.5
+margin_left = 552.5
+margin_top = 215.0
+margin_right = 639.5
+margin_bottom = 252.0
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 6 )
+text = "test"
+
+[node name="Shadow" type="Sprite" parent="option1"]
+position = Vector2( -42.5, 15.008 )
+scale = Vector2( 2.5, 2.813 )
+texture = ExtResource( 5 )
 
 [node name="icon" type="AnimatedSprite" parent="option1"]
-position = Vector2( -42.5, 15 )
-scale = Vector2( 2.5, 2.5 )
+position = Vector2( -42.5, 15.008 )
+scale = Vector2( 2.031, 2.031 )
 frames = SubResource( 5 )
 animation = "potion"
 
 [node name="option2" type="Button" parent="."]
-margin_left = 547.5
-margin_top = 300.0
-margin_right = 633.5
-margin_bottom = 332.0
+margin_left = 555.0
+margin_top = 287.5
+margin_right = 641.0
+margin_bottom = 331.5
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 6 )
+text = "test"
+
+[node name="Shadow" type="Sprite" parent="option2"]
+position = Vector2( -45, 12.508 )
+scale = Vector2( 2.5, 2.813 )
+texture = ExtResource( 5 )
 
 [node name="icon" type="AnimatedSprite" parent="option2"]
-position = Vector2( -45, 15 )
-scale = Vector2( 2.5, 2.5 )
+position = Vector2( -47, 13.008 )
+scale = Vector2( 2.031, 2.031 )
 frames = SubResource( 5 )
 animation = "potion"
 
 [node name="option3" type="Button" parent="."]
-margin_left = 547.5
-margin_top = 360.0
-margin_right = 633.5
-margin_bottom = 391.0
+margin_left = 552.5
+margin_top = 355.0
+margin_right = 638.5
+margin_bottom = 396.0
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 6 )
+text = "test"
+
+[node name="Shadow" type="Sprite" parent="option3"]
+position = Vector2( -42.5, 15.0079 )
+scale = Vector2( 2.5, 2.813 )
+texture = ExtResource( 5 )
 
 [node name="icon" type="AnimatedSprite" parent="option3"]
-position = Vector2( -45, 17.5 )
-scale = Vector2( 2.5, 2.5 )
+position = Vector2( -42, 15.5079 )
+scale = Vector2( 2.031, 2.031 )
 frames = SubResource( 5 )
 animation = "potion"
 
