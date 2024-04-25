@@ -8,10 +8,12 @@ var global
 var option1 = "test"
 var option2 = "test"
 var option3 = "test"
-var items = ["sword", "dagger"]
+var items = ["sword", "dagger", "crossbow", "potion"]
 
 var sword_scene = preload("res://characters/player/items/item_sword.tscn")
 var dagger_scene = preload("res://characters/player/items/item_dagger.tscn")
+var crossbow_scene = preload("res://characters/player/items/item_crossbow.tscn")
+var heal_scene = preload("res://characters/player/items/item_heal.tscn")
 
 func _ready():
 	global = get_node("/root/global")
@@ -51,6 +53,14 @@ func _on_option1_pressed():
 		var dagger = dagger_scene.instance()
 		get_parent().add_child(dagger)
 		pass
+	if option1 == "crossbow":
+		var crossbow = crossbow_scene.instance()
+		get_parent().add_child(crossbow)
+		pass
+	if option1 == "potion":
+		var potion = heal_scene.instance()
+		get_parent().add_child(potion)
+		pass
 	queue_free()
 	pass # Replace with function body.
 
@@ -64,6 +74,14 @@ func _on_option2_pressed():
 		var dagger = dagger_scene.instance()
 		get_parent().add_child(dagger)
 		pass
+	if option2 == "crossbow":
+		var crossbow = crossbow_scene.instance()
+		get_parent().add_child(crossbow)
+		pass
+	if option2 == "potion":
+		var potion = heal_scene.instance()
+		get_parent().add_child(potion)
+		pass
 	queue_free()
 	pass # Replace with function body.
 
@@ -76,6 +94,14 @@ func _on_option3_pressed():
 	if option3 == "dagger":
 		var dagger = dagger_scene.instance()
 		get_parent().add_child(dagger)
+		pass
+	if option3 == "crossbow":
+		var crossbow = crossbow_scene.instance()
+		get_parent().add_child(crossbow)
+		pass
+	if option3 == "potion":
+		var potion = heal_scene.instance()
+		get_parent().add_child(potion)
 		pass
 	queue_free()
 	pass # Replace with function body.

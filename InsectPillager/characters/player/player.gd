@@ -100,16 +100,19 @@ func recibir_danio(damage):
 		if vida <= 0:
 			# Aquí puedes añadir lógica para el manejo de la muerte del jugador
 			pass
+#METODO PARA LA POCION DE CURA
+func curar_dano(cura):
+	vida += cura
+	vida_progressbar.value = vida
+	pass
 
-# Método llamado cuando el Timer termina
-# Método llamado cuando el Timer termina
 # Método llamado cuando el Timer termina
 
 func add_exp(amount):
 	experience += amount
 	exp_progressbar.value = experience
 	print("Player EXP:", experience)
-	if experience == 10:
+	if experience >= 10:
 		var levelup = levelupchosse_scene.instance()
 		$items.add_child(levelup)
 		experience = 0

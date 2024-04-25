@@ -1,10 +1,11 @@
 extends Control
 
+
 # Archivo de la bala (tscn)
-var bullet_scene = preload("res://characters/dagger.tscn")
+var bullet_scene = preload("res://characters/arrow.tscn")
 
 # Tiempo entre cada spawn de bala (en segundos)
-const SPAWN_INTERVAL = 2
+const SPAWN_INTERVAL = 0.5
 # Timer para controlar el spawn de balas
 var spawn_timer
 
