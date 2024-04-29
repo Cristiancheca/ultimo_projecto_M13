@@ -2,6 +2,7 @@ extends Node2D
 
 var enemy_scene = preload("res://characters/enemies/enemy_warrior1.tscn")
 var enemy_maggot = preload("res://characters/enemies/enemy_maggot.tscn")
+var enemy_elite = preload("res://characters/enemies/enemy_elite.tscn")
 
 func _ready():
 	# Start the initial spawn
@@ -12,22 +13,21 @@ func _on_Timer_timeout():
 	var random_value = randf()
 
 	# Declare new_enemy variable outside the if-else block
-	var new_enemy 
+	var new_enemy
 
-	# If the random value is less than or equal to 0.5, spawn enemy_warrior1
-	if random_value <= 0.5:
+	# Decide which enemy to spawn based on random value
+	if random_value <= 0.33:
 		new_enemy = enemy_scene.instance()
-	else:
-		# Otherwise, spawn enemy_maggot
+	elif random_value <= 0.66:
 		new_enemy = enemy_maggot.instance()
+	else:
+		new_enemy = enemy_elite.instance()
 
 	# Set the initial position of the enemy (adjust as needed)
 	new_enemy.position = global_position
 
 	# Add the enemy to the scene
-	
 	get_parent().call_deferred("add_child", new_enemy)
 
 	# Restart the timer for the next spawn
 	$Timer.start()
-

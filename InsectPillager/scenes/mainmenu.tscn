@@ -1421,8 +1421,9 @@ format = 1
 tile_data = PoolIntArray( 0, 17, 0, 1, 12, 0, 2, 12, 0, 3, 12, 0, 4, 12, 0, 5, 12, 0, 6, 12, 0, 7, 16, 0, 65536, 10, 0, 65543, 8, 0, 131072, 10, 0, 131079, 8, 0, 196608, 10, 0, 196615, 8, 0, 262144, 15, 0, 262145, 6, 0, 262146, 6, 0, 262147, 6, 0, 262148, 6, 0, 262149, 6, 0, 262150, 6, 0, 262151, 14, 0, 262174, 8, 0, 327710, 8, 0, 393246, 8, 0, 458782, 8, 0, 524318, 8, 0, 589854, 11, 0, 589855, 16, 0, 655391, 8, 0, 720924, 10, 0, 720927, 8, 0, 786460, 10, 0, 786463, 8, 0, 851996, 10, 0, 851999, 8, 0 )
 
 [node name="Menu" type="Control" parent="."]
+margin_top = 33.0
 margin_right = 1020.0
-margin_bottom = 593.0
+margin_bottom = 626.0
 
 [node name="play" type="Button" parent="Menu"]
 margin_left = 372.0
@@ -1468,9 +1469,9 @@ text = "E X I T"
 
 [node name="Label" type="Label" parent="Menu"]
 margin_left = 128.0
-margin_top = 40.0
+margin_top = 33.0
 margin_right = 905.0
-margin_bottom = 144.0
+margin_bottom = 137.0
 custom_colors/font_color = Color( 0.866667, 1, 0.67451, 1 )
 custom_colors/font_color_shadow = Color( 0.403922, 0.494118, 0.360784, 1 )
 custom_constants/shadow_offset_x = 4

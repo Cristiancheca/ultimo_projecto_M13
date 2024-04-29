@@ -60,8 +60,9 @@ func recibir_danio(damage):
 	if vida <= 0:
 		# Liberar el nodo cuando la vida llega a cero
 		# Spawn exp orb at enemy's position
-		var exp_orb = exp_orb_scene.instance()
-		exp_orb.position = global_position
-		get_parent().get_parent().call_deferred("add_child", exp_orb)
+		if randi() % 2 == 0:
+			var exp_orb = exp_orb_scene.instance()
+			exp_orb.position = global_position
+			get_parent().get_parent().call_deferred("add_child", exp_orb)
 		
 		call_deferred("queue_free")

@@ -202,15 +202,15 @@ region_rect = Rect2( 0, 0, 62, 10 )
 
 [sub_resource type="StyleBoxTexture" id=43]
 texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 62, 10 )
+region_rect = Rect2( 0, 0, 120, 19 )
 
 [sub_resource type="StyleBoxTexture" id=61]
 texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 62, 10 )
 
-[sub_resource type="StyleBoxTexture" id=62]
+[sub_resource type="StyleBoxTexture" id=64]
 texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 62, 10 )
+region_rect = Rect2( 0, 0, 120, 19 )
 
 [sub_resource type="DynamicFont" id=63]
 outline_size = 1
@@ -240,6 +240,7 @@ color = Color( 0, 0, 0, 0.117647 )
 position = Vector2( -1.19209e-06, -2.02656e-06 )
 scale = Vector2( 0.375, 0.40625 )
 frames = SubResource( 40 )
+frame = 1
 playing = true
 
 [node name="Light" type="Sprite" parent="."]
@@ -264,6 +265,8 @@ margin_right = 121.0
 margin_bottom = -42.5
 text = "GET"
 
+[node name="items" type="Node2D" parent="."]
+
 [node name="UI" type="Control" parent="."]
 margin_left = -129.0
 margin_top = -77.0
@@ -283,9 +286,9 @@ margin_bottom = 52.0
 [node name="ProgressBar" type="ProgressBar" parent="UI"]
 modulate = Color( 1, 1, 1, 0.784314 )
 margin_left = 118.0
-margin_top = 61.0
+margin_top = 62.5
 margin_right = 140.0
-margin_bottom = 68.0
+margin_bottom = 67.5
 size_flags_vertical = 1
 custom_styles/fg = SubResource( 42 )
 custom_styles/bg = SubResource( 43 )
@@ -293,21 +296,21 @@ value = 100.0
 percent_visible = false
 
 [node name="experience" type="ProgressBar" parent="UI"]
-margin_left = 6.5
-margin_top = -1.0
-margin_right = 251.5
-margin_bottom = 16.0
+margin_left = 7.0
+margin_top = -1.5
+margin_right = 252.0
+margin_bottom = 18.5
 custom_styles/fg = SubResource( 61 )
-custom_styles/bg = SubResource( 62 )
+custom_styles/bg = SubResource( 64 )
 max_value = 10.0
 percent_visible = false
 
 [node name="Label" type="Label" parent="UI"]
 modulate = Color( 1, 1, 1, 0.705882 )
-margin_left = 116.0
-margin_top = 4.0
-margin_right = 142.0
-margin_bottom = 29.0
+margin_left = 116.5
+margin_top = 5.0
+margin_right = 142.5
+margin_bottom = 30.0
 custom_colors/font_color = Color( 0.670588, 0.670588, 0.670588, 1 )
 custom_fonts/font = SubResource( 63 )
 text = "00:00"
@@ -315,28 +318,6 @@ align = 1
 valign = 1
 
 [node name="Timer" type="Timer" parent="UI"]
-
-[node name="levelup" type="Control" parent="UI"]
-visible = false
-margin_left = 109.0
-margin_top = 55.5
-margin_right = 149.0
-margin_bottom = 95.5
-
-[node name="ColorRect2" type="ColorRect" parent="UI/levelup"]
-margin_left = -187.0
-margin_top = -98.0
-margin_right = 229.0
-margin_bottom = 144.0
-color = Color( 0, 0, 0, 0.588235 )
-
-[node name="ColorRect" type="ColorRect" parent="UI/levelup"]
-margin_left = -6.0
-margin_top = -21.0
-margin_right = 46.0
-margin_bottom = 44.0
-
-[node name="items" type="Node2D" parent="."]
 
 [connection signal="timeout" from="Inmunity" to="." method="_on_Inmunity_timeout"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

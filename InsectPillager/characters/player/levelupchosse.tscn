@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/weapon_free.png" type="Texture" id=1]
 [ext_resource path="res://characters/player/levelupchosse.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/new_dynamicfont.tres" type="DynamicFont" id=4]
 [ext_resource path="res://assets/shadow.png" type="Texture" id=5]
 [ext_resource path="res://assets/new_styleboxtexture.tres" type="StyleBox" id=6]
+[ext_resource path="res://assets/essence.png" type="Texture" id=7]
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
@@ -61,9 +62,30 @@ animations = [ {
 } ]
 
 [node name="levelupchosse" type="Node2D"]
+pause_mode = 2
 position = Vector2( -219, -125 )
 scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -150.0
+margin_top = -130.0
+margin_right = 1247.0
+margin_bottom = 765.0
+color = Color( 0, 0, 0, 0.545098 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color( 1, 1, 1, 0.470588 )
+position = Vector2( 537.5, -177.5 )
+amount = 20
+lifetime = 5.0
+preprocess = 6.0
+texture = ExtResource( 7 )
+emission_shape = 2
+emission_rect_extents = Vector2( 500, 1 )
+spread = 180.0
+gravity = Vector2( 0, 70 )
+scale_amount = 3.0
 
 [node name="Bag" type="Sprite" parent="."]
 modulate = Color( 0.917647, 0.905882, 0.878431, 1 )

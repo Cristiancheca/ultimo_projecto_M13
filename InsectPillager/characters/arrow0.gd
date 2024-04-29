@@ -1,12 +1,16 @@
 extends KinematicBody2D
 
-const SPEED = 350
-const DAMAGE = 10
+const SPEED = 300
+var DAMAGE = 10
 const INFINITY = 999
 var direction = Vector2.ZERO
 var target_enemy = null
+var global
 
 func _ready():
+	global = get_node("/root/global")
+	if global.lvlcrossbow >= 1:
+		DAMAGE = DAMAGE * global.lvlcrossbow
 	# Buscar el enemigo más cercano
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	var closest_enemy = null

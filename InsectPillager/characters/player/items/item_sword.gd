@@ -5,9 +5,10 @@ extends Control
 # var a = 2
 # var b = "text"
 var sword_damage = 5
-
+var global
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	global = get_node("/root/global")
 	$Timer.start()
 	pass # Replace with function body.
 
@@ -16,13 +17,11 @@ func _ready():
 #func _process(delta):
 #	pass
 func _on_Timer_timeout():
-	print("TIMER TIMEOUT")
 	yield(get_tree(), "idle_frame")  # Wait for the current frame to finish processing
 	$AnimatedSprite.play("swipe")
 	$Area2D.monitorable = true
 	$Area2D.monitoring = true
 	yield($AnimatedSprite, "animation_finished")
-	print("IS SLASHING FALSE")
 	$AnimatedSprite.play("default")
 	$Area2D.monitorable = false
 	$Area2D.monitoring = false

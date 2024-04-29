@@ -1,12 +1,17 @@
 extends KinematicBody2D
 
-const SPEED = 200
-const DAMAGE = 999
+const SPEED = 150
+var DAMAGE = 40
 const INFINITY = 999
 var direction = Vector2.ZERO
 var target_enemy = null
+var global
 
 func _ready():
+	global = get_node("/root/global")
+	if global.lvldagger >= 1:
+		DAMAGE = DAMAGE * global.lvldagger
+		
 	# Buscar el enemigo más cercano
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	var closest_enemy = null
@@ -35,7 +40,7 @@ func _on_Area2D_body_entered(body):
 	# Aplicar daño al enemigo si colisiona con él
 	if body.is_in_group("enemy"):
 		body.recibir_danio(DAMAGE)
-		queue_free()
+		
 	# Eliminar la bala después de la colisión
 	
 func _on_Timer_timeout():
