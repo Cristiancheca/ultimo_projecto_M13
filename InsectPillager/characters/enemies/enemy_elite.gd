@@ -1,5 +1,5 @@
 extends KinematicBody2D
-
+var global
 # Variables para el movimiento
 var speed = 60  # Adjust as needed
 var player = null
@@ -13,6 +13,11 @@ var vida = 30
 var animated_sprite
 
 func _ready():
+	global = get_node("/root/global")
+	#AUGMENTAR VIDA I DAÑO SEGUN EL TIEMPO:
+	if global.enemylvl >= 1:
+		vida = vida * global.enemylvl
+		damage = damage * global.enemylvl
 	# Obtener el AnimatedSprite
 	animated_sprite = $AnimatedSprite
 

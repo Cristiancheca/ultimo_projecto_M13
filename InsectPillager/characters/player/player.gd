@@ -1,5 +1,6 @@
 extends KinematicBody2D
-
+#VARIABLE PARA SCRIPT GLOBAL
+var global
 # Variables para el movimiento
 var speed = 130
 var velocity = Vector2()
@@ -12,7 +13,6 @@ var inmune = false
 # ProgressBar de la UI para mostrar la vida
 var vida_progressbar
 var exp_progressbar
-# Variables para el AnimatedSprite
 var animated_sprite
 
 var seconds = 0
@@ -32,13 +32,12 @@ var left_area
 var right_area
 
 func _ready():
+	global = get_node("/root/global")
 	# Obtener el AnimatedSprite
 	animated_sprite = $AnimatedSprite
-
 	# Obtener el ProgressBar de la UI
 	vida_progressbar = $UI/ProgressBar
 	exp_progressbar = $UI/experience
-
 	# Inicializar el ProgressBar con la vida inicial del jugador
 	vida_progressbar.value = vida
 	exp_progressbar.value = experience
@@ -49,6 +48,7 @@ func _ready():
 	if get_parent().name == "mercado":
 		$items.visible = false
 		$UI/ProgressBar.visible = false
+		$Light.modulate = Color(1, 1, 1, 0.06)
 		pass
 
 func _physics_process(delta):
@@ -95,7 +95,8 @@ func recibir_danio(damage):
 		# Actualizar el valor del ProgressBar de la UI con la vida actual del jugador
 		vida_progressbar.value = vida
 		inmune = true
-		$inmune_light.visible = true
+		# Modulate the AnimatedSprite to grey semi-transparent color
+		$AnimatedSprite.modulate = Color(3, 3, 3, 0.5)
 		$Inmunity.start()
 		if vida <= 0:
 			# Aquí puedes añadir lógica para el manejo de la muerte del jugador
@@ -111,7 +112,6 @@ func curar_dano(cura):
 func add_exp(amount):
 	experience += amount
 	exp_progressbar.value = experience
-	print("Player EXP:", experience)
 	if experience >= 10:
 		var levelup = levelupchosse_scene.instance()
 		$items.add_child(levelup)
@@ -136,6 +136,10 @@ func _on_Timer_timeout():
 	 # Calcula los minutos y segundos
 	minutes = seconds / 60
 	var remaining_seconds = seconds % 60
+	# Increase global.enemylvl by 1 every minute
+	if remaining_seconds == 0:  # Check if it's a new minute
+		global.enemylvl = global.enemylvl +1
+		print(global.enemylvl)
 	# Actualiza el texto del contador de tiempo
 	$UI/Label.text = str(minutes) + ":" + str(remaining_seconds).pad_zeros(2)
 	# Reinicia el temporizador para contar el siguiente segundo
@@ -143,6 +147,7 @@ func _on_Timer_timeout():
 
 
 func _on_Inmunity_timeout():
-	$inmune_light.visible = false
+	# Return the AnimatedSprite to its normal color
+	$AnimatedSprite.modulate = Color(1, 1, 1, 1)
 	inmune = false
 	pass # Replace with function body.

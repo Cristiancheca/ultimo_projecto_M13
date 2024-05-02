@@ -253,7 +253,6 @@ texture = ExtResource( 4 )
 position = Vector2( 0, -9 )
 frames = SubResource( 17 )
 animation = "walk_down"
-frame = 3
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/Oseemono-V5Ez.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/light.png" type="Texture" id=2]
+[ext_resource path="res://scenes/startslector.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 23
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 120, 120 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 120, 120 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 120, 120 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 120, 120 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 120, 120 )
+modulate_color = Color( 0, 0, 0, 1 )
+
+[node name="selector" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -107.0
+margin_top = -56.0
+margin_right = 109.0
+margin_bottom = 55.0
+
+[node name="sword_button" type="Button" parent="."]
+margin_left = 29.0
+margin_top = -53.0
+margin_right = 108.0
+margin_bottom = -23.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "SWORD"
+
+[node name="dagger_button" type="Button" parent="."]
+margin_left = 29.0
+margin_top = -16.0
+margin_right = 108.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "DAGGER"
+
+[node name="crossbow_button" type="Button" parent="."]
+margin_left = 29.0
+margin_top = 21.0
+margin_right = 108.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "CROSSBOW"
+
+[connection signal="pressed" from="sword_button" to="." method="_on_sword_button_pressed"]
+[connection signal="pressed" from="dagger_button" to="." method="_on_dagger_button_pressed"]
+[connection signal="pressed" from="crossbow_button" to="." method="_on_crossbow_button_pressed"]

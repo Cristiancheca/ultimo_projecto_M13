@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Download28410.png-6a92c1172891126de5795037fe31020f.stex"
+path="res://.import/Download72849.png-42317f24fb0eb7f79a2222dd41dc12c8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/player/Download28410.png"
-dest_files=[ "res://.import/Download28410.png-6a92c1172891126de5795037fe31020f.stex" ]
+source_file="res://characters/player/skins/Download72849.png"
+dest_files=[ "res://.import/Download72849.png-42317f24fb0eb7f79a2222dd41dc12c8.stex" ]
 
 [params]
 
