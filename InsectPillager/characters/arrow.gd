@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const SPEED = 150
-var DAMAGE = 15
+var DAMAGE = 10
 const INFINITY = 999
 var direction = Vector2.ZERO
 var target_enemy = null

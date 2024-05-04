@@ -6,12 +6,13 @@ extends Node
 # var b = "text"
 var is_paused = false
 var actualhp
-
+#SKIN PLAYER
+var skin = 0
 #CURRENCY
 var Shells = 0
 
 #DURING EACH RUN
-var startweapon = 0
+var startweapon = "null"
 
 var lvlsword = 0
 var lvldagger = 0

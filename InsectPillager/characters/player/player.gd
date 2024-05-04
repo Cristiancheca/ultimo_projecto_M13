@@ -30,6 +30,9 @@ var item_sword = preload("res://characters/player/items/item_sword.tscn")
 # Áreas 2D para las colisiones con la espada
 var left_area
 var right_area
+var sword_scene = preload("res://characters/player/items/item_sword.tscn")
+var dagger_scene = preload("res://characters/player/items/item_dagger.tscn")
+var crossbow_scene = preload("res://characters/player/items/item_crossbow.tscn")
 
 func _ready():
 	global = get_node("/root/global")
@@ -41,14 +44,33 @@ func _ready():
 	# Inicializar el ProgressBar con la vida inicial del jugador
 	vida_progressbar.value = vida
 	exp_progressbar.value = experience
-
-	# Start the Timer
-	$UI/Timer.start()
+	#SETUP STARTING WEAPON
+	if global.startweapon == "sword":
+		if global.lvlsword == 0:
+			var sword = sword_scene.instance()
+			$items.add_child(sword)
+			global.lvlsword = global.lvlsword +1
+	if global.startweapon == "dagger":
+		if global.lvldagger == 0:
+			var dagger = dagger_scene.instance()
+			$items.add_child(dagger)
+			global.lvldagger = global.lvldagger +1
+	if global.startweapon == "crossbow":
+		if global.lvlcrossbow == 0:
+			var crossbow = crossbow_scene.instance()
+			$items.add_child(crossbow)
+			global.lvlcrossbow = global.lvlcrossbow +1
+	
 	
 	if get_parent().name == "mercado":
 		$items.visible = false
 		$UI/ProgressBar.visible = false
+		$UI/Label.visible = false
+		$UI/experience.visible = false
 		$Light.modulate = Color(1, 1, 1, 0.06)
+		pass
+	else:
+		$UI/Timer.start()
 		pass
 
 func _physics_process(delta):

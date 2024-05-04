@@ -13,6 +13,7 @@ func _ready():
 		global.toggle_pause()  # Pausing the game
 	else:
 		pass # Replace with function body.
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,27 +21,16 @@ func _ready():
 #	pass
 
 
-func _on_sword_button_pressed():
-	global.toggle_pause()
-	global.startweapon = "sword"
-	get_tree().change_scene("res://scenes/level.tscn")
+func _on_armor0_pressed():
+	
 	pass # Replace with function body.
 
 
-func _on_dagger_button_pressed():
-	global.toggle_pause()
-	global.startweapon = "dagger"
-	get_tree().change_scene("res://scenes/level.tscn")
+func _on_armor1_pressed():
+	
 	pass # Replace with function body.
 
 
-func _on_crossbow_button_pressed():
-	global.toggle_pause()
-	global.startweapon = "crossbow"
-	get_tree().change_scene("res://scenes/level.tscn")
+func _on_armor2_pressed():
+	
 	pass # Replace with function body.
-
-
-func _on_Button_pressed():
-	global.toggle_pause()
-	queue_free()

@@ -596,7 +596,6 @@ color = Color( 0, 0, 0, 0.117647 )
 position = Vector2( -1.19209e-06, -2.02656e-06 )
 scale = Vector2( 0.375, 0.40625 )
 frames = SubResource( 40 )
-frame = 3
 playing = true
 
 [node name="Light" type="Sprite" parent="."]
