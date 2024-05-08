@@ -70,10 +70,13 @@ func _ready():
 		$Light.modulate = Color(1, 1, 1, 0.06)
 		pass
 	else:
+		$UI/shells.visible = false
 		$UI/Timer.start()
 		pass
 
 func _physics_process(delta):
+	#shells
+	$UI/shells.text = str(global.shells)
 	#LEVELUP
 	
 	# Control de movimiento
@@ -94,21 +97,22 @@ func _physics_process(delta):
 	update_animation()
 
 func update_animation():
+	var actualskin = global.skin
 	if velocity.length_squared() > 0:
 		if abs(velocity.x) > abs(velocity.y):
 			if velocity.x > 0:
-				animated_sprite.play("walk_right")
+				animated_sprite.play(actualskin+"walk_right")
 				slash_direction = 1
 			else:
-				animated_sprite.play("walk_left")
+				animated_sprite.play(actualskin+"walk_left")
 				slash_direction = -1
 		else:
 			if velocity.y > 0:
-				animated_sprite.play("walk_down")
+				animated_sprite.play(actualskin+"walk_down")
 			else:
-				animated_sprite.play("walk_up")
+				animated_sprite.play(actualskin+"walk_up")
 	else:
-		animated_sprite.play("default")
+		animated_sprite.play(actualskin+"default")
 
 # Método para recibir daño
 func recibir_danio(damage):
@@ -132,6 +136,7 @@ func curar_dano(cura):
 # Método llamado cuando el Timer termina
 
 func add_exp(amount):
+	global.shells = global.shells + 1
 	experience += amount
 	exp_progressbar.value = experience
 	if experience >= 10:

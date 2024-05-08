@@ -83,9 +83,8 @@ func _on_option1_pressed():
 			var sword = sword_scene.instance()
 			get_parent().add_child(sword)
 			global.lvlsword = global.lvlsword +1
-			print("GLOBAL LVLSWORD: ", global.lvlsword)
+			global.lvlswordbool = true
 		else:
-			print("HAS PASSED HERE")
 			$option1.text = option1 +"+damage"
 			global.lvlsword = global.lvlsword +1
 		pass

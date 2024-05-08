@@ -12,10 +12,13 @@ func _ready():
 	$Timer.start()
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if global.lvlswordbool == true:
+		sword_damage = sword_damage + 3
+		global.lvlswordbool = false
+		pass
+
 func _on_Timer_timeout():
 	yield(get_tree(), "idle_frame")  # Wait for the current frame to finish processing
 	$AnimatedSprite.play("swipe")

@@ -5,6 +5,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var startselect = preload("res://scenes/startslector.tscn")
+var armorshop = preload("res://scenes/armorshop.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,5 +39,8 @@ func _on_Areashop_body_exited(body):
 
 
 func _on_shopbutton_pressed():
-	
+	var player = get_node("player")
+	var armorshop0 = armorshop.instance()
+	armorshop0.position = player.global_position
+	add_child(armorshop0)
 	pass # Replace with function body.

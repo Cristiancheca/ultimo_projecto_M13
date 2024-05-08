@@ -7,14 +7,17 @@ extends Node
 var is_paused = false
 var actualhp
 #SKIN PLAYER
-var skin = 0
+var skin = "0"
+var hasskin1 = false
+var hasskin2 = false
 #CURRENCY
-var Shells = 0
+var shells = 100
 
 #DURING EACH RUN
 var startweapon = "null"
 
 var lvlsword = 0
+var lvlswordbool = false
 var lvldagger = 0
 var lvlcrossbow = 0
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/Oseemono-V5Ez.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/light.png" type="Texture" id=2]
@@ -89,6 +89,11 @@ texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 120, 120 )
 modulate_color = Color( 0, 0, 0, 1 )
 
+[sub_resource type="DynamicFont" id=18]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
 [sub_resource type="DynamicFont" id=17]
 size = 25
 outline_size = 1
@@ -113,9 +118,16 @@ region_rect = Rect2( 0, 0, 32, 32 )
 
 [node name="selector" type="Node2D"]
 pause_mode = 2
-position = Vector2( -5, 0 )
+position = Vector2( -9, 0 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 3 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = -202.0
+margin_top = -126.0
+margin_right = 215.0
+margin_bottom = 124.0
+color = Color( 0, 0, 0, 0.352941 )
 
 [node name="Cuevafondo" type="Sprite" parent="."]
 position = Vector2( -35.75, -1 )
@@ -136,10 +148,10 @@ frames = SubResource( 12 )
 animation = "sword"
 
 [node name="sword_button" type="Button" parent="."]
-margin_left = 29.0
-margin_top = -53.0
-margin_right = 110.0
-margin_bottom = -23.0
+margin_left = 36.5
+margin_top = -46.0
+margin_right = 100.5
+margin_bottom = -25.0
 custom_fonts/font = SubResource( 13 )
 custom_styles/hover = SubResource( 14 )
 custom_styles/pressed = SubResource( 15 )
@@ -149,16 +161,16 @@ custom_styles/normal = SubResource( 16 )
 text = "SWORD"
 
 [node name="icon2" type="AnimatedSprite" parent="."]
-position = Vector2( 68.75, -3.748 )
+position = Vector2( 71.5, -5 )
 scale = Vector2( 1.98438, 1.73425 )
 frames = SubResource( 12 )
 animation = "dagger"
 
 [node name="dagger_button" type="Button" parent="."]
-margin_left = 32.0
-margin_top = -16.0
-margin_right = 109.0
-margin_bottom = 14.0
+margin_left = 36.5
+margin_top = -13.5
+margin_right = 103.5
+margin_bottom = 7.5
 custom_fonts/font = SubResource( 13 )
 custom_styles/hover = SubResource( 14 )
 custom_styles/pressed = SubResource( 15 )
@@ -168,16 +180,16 @@ custom_styles/normal = SubResource( 16 )
 text = "DAGGER"
 
 [node name="icon" type="AnimatedSprite" parent="."]
-position = Vector2( 67.499, 34.749 )
+position = Vector2( 70, 29 )
 scale = Vector2( 1.31244, 1.10931 )
 frames = SubResource( 12 )
 animation = "crossbow"
 
 [node name="crossbow_button" type="Button" parent="."]
-margin_left = 30.0
-margin_top = 21.0
-margin_right = 109.0
-margin_bottom = 51.0
+margin_left = 35.0
+margin_top = 19.5
+margin_right = 106.0
+margin_bottom = 41.5
 custom_fonts/font = SubResource( 13 )
 custom_styles/hover = SubResource( 14 )
 custom_styles/pressed = SubResource( 15 )
@@ -185,6 +197,17 @@ custom_styles/focus = SubResource( 4 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 16 )
 text = "CROSSBOW"
+
+[node name="Label" type="Label" parent="."]
+margin_left = -94.0
+margin_top = 2.0
+margin_right = 129.0
+margin_bottom = 75.0
+custom_colors/font_color = Color( 0.85098, 0.85098, 0.85098, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "Objective: 
+recolect souls
+Choose your starting weapon"
 
 [node name="Border" type="Sprite" parent="."]
 position = Vector2( 4.24999, -1.02499 )
