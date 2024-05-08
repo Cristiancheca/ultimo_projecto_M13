@@ -78,7 +78,7 @@ func _ready():
 		pass
 	global.toggle_pause()
 	animated_sprite.play(actualskin+"revive")
-	yield($AnimatedSprite,"animation_finished")
+	yield(animated_sprite,"animation_finished")
 	global.toggle_pause()
 
 func _physics_process(delta):

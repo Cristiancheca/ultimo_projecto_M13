@@ -63,9 +63,9 @@ animations = [ {
 } ]
 
 [sub_resource type="DynamicFont" id=13]
-size = 20
 outline_size = 1
 outline_color = Color( 0, 0, 0, 0.698039 )
+use_mipmaps = true
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxTexture" id=14]

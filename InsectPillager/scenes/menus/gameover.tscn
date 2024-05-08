@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/Oseemono-V5Ez.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/PentaGrams Malefissent.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/menus/gameover.gd" type="Script" id=3]
 [ext_resource path="res://assets/ui/button1.png" type="Texture" id=4]
-[ext_resource path="res://assets/ENDOR___.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -13,10 +12,9 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 8
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 5 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
 outline_size = 1
@@ -24,10 +22,9 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 8
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 5 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 4 )
@@ -49,9 +46,9 @@ script = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -489.0
-margin_top = -317.0
+margin_top = -320.0
 margin_right = 490.0
-margin_bottom = 262.0
+margin_bottom = 259.0
 color = Color( 0.176471, 0.0705882, 0.0705882, 0.588235 )
 
 [node name="Control" type="Control" parent="."]
