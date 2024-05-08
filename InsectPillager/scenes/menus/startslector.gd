@@ -23,21 +23,21 @@ func _ready():
 func _on_sword_button_pressed():
 	global.toggle_pause()
 	global.startweapon = "sword"
-	get_tree().change_scene("res://scenes/level.tscn")
+	Transition.change_scene("res://scenes/level.tscn")
 	pass # Replace with function body.
 
 
 func _on_dagger_button_pressed():
 	global.toggle_pause()
 	global.startweapon = "dagger"
-	get_tree().change_scene("res://scenes/level.tscn")
+	Transition.change_scene("res://scenes/level.tscn")
 	pass # Replace with function body.
 
 
 func _on_crossbow_button_pressed():
 	global.toggle_pause()
 	global.startweapon = "crossbow"
-	get_tree().change_scene("res://scenes/level.tscn")
+	Transition.change_scene("res://scenes/level.tscn")
 	pass # Replace with function body.
 
 

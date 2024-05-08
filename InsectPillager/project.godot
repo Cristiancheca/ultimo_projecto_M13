@@ -16,6 +16,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
+Transition="*res://scenes/menus/transition.tscn"
 global="*res://characters/global.tscn"
 
 [display]

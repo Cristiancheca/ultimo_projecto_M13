@@ -14,6 +14,7 @@ var hasskin2 = false
 var shells = 100
 
 #DURING EACH RUN
+var score = 0
 var startweapon = "null"
 
 var lvlsword = 0

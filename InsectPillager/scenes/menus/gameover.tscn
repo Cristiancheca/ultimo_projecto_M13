@@ -1,0 +1,128 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/Oseemono-V5Ez.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/PentaGrams Malefissent.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/menus/gameover.gd" type="Script" id=3]
+[ext_resource path="res://assets/ui/button1.png" type="Texture" id=4]
+[ext_resource path="res://assets/ENDOR___.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 8
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 8
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 64, 32 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 64, 32 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 64, 32 )
+
+[node name="gameover" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -489.0
+margin_top = -317.0
+margin_right = 490.0
+margin_bottom = 262.0
+color = Color( 0.176471, 0.0705882, 0.0705882, 0.588235 )
+
+[node name="Control" type="Control" parent="."]
+margin_top = -4.0
+margin_right = 40.0
+margin_bottom = 36.0
+
+[node name="title" type="Label" parent="Control"]
+margin_left = -67.0
+margin_top = -67.0
+margin_right = 68.0
+margin_bottom = -31.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.901961, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "GAME OVER"
+
+[node name="scoretitle" type="Label" parent="Control"]
+margin_left = -40.0
+margin_top = -25.0
+margin_bottom = -4.0
+rect_min_size = Vector2( 2, 2 )
+rect_scale = Vector2( 2, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Score:"
+align = 1
+
+[node name="score" type="Label" parent="Control/scoretitle"]
+margin_top = 17.0
+margin_right = 40.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0.447059, 0.447059, 0.447059, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "1000"
+align = 1
+
+[node name="scoretitle2" type="Label" parent="Control"]
+margin_left = -96.0
+margin_top = 12.0
+margin_bottom = 33.0
+rect_min_size = Vector2( 2, 2 )
+rect_scale = Vector2( 2, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Shells collected:"
+align = 1
+
+[node name="shells" type="Label" parent="Control/scoretitle2"]
+margin_left = 28.0
+margin_top = 14.0
+margin_right = 68.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0.443137, 0.443137, 0.443137, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "1000"
+align = 1
+
+[node name="exit" type="Button" parent="Control"]
+margin_left = -43.0
+margin_top = 44.0
+margin_right = 44.0
+margin_bottom = 72.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.541176, 0.541176, 0.541176, 1 )
+custom_colors/font_color_pressed = Color( 0.298039, 0.298039, 0.298039, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "Return to Market"
+
+[connection signal="pressed" from="Control/exit" to="." method="_on_exit_pressed"]

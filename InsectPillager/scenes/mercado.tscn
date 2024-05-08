@@ -1921,7 +1921,7 @@ tile_data = PoolIntArray( 524315, 31, 0, 524338, 31, 0, 589851, 30, 0, 589874, 2
 [node name="shop" type="AnimatedSprite" parent="."]
 position = Vector2( 344, 263 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Areashop" type="Area2D" parent="shop"]
@@ -1947,7 +1947,7 @@ modulate = Color( 1, 1, 1, 0.588235 )
 position = Vector2( 13, 17 )
 scale = Vector2( 1.56667, 1.54545 )
 frames = SubResource( 111 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="player" parent="." instance=ExtResource( 2 )]

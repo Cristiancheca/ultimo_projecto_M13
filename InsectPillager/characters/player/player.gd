@@ -6,6 +6,7 @@ var speed = 130
 var velocity = Vector2()
 
 # Variables para la vida del jugador
+var score_actual = 0
 var vida = 100
 var experience = 0
 var levelupchosse_scene = preload("res://characters/player/levelupchosse.tscn")
@@ -33,9 +34,12 @@ var right_area
 var sword_scene = preload("res://characters/player/items/item_sword.tscn")
 var dagger_scene = preload("res://characters/player/items/item_dagger.tscn")
 var crossbow_scene = preload("res://characters/player/items/item_crossbow.tscn")
+var gameover_scene = preload("res://scenes/menus/gameover.tscn")
+var actualskin
 
 func _ready():
 	global = get_node("/root/global")
+	actualskin = global.skin
 	# Obtener el AnimatedSprite
 	animated_sprite = $AnimatedSprite
 	# Obtener el ProgressBar de la UI
@@ -61,7 +65,6 @@ func _ready():
 			$items.add_child(crossbow)
 			global.lvlcrossbow = global.lvlcrossbow +1
 	
-	
 	if get_parent().name == "mercado":
 		$items.visible = false
 		$UI/ProgressBar.visible = false
@@ -73,6 +76,10 @@ func _ready():
 		$UI/shells.visible = false
 		$UI/Timer.start()
 		pass
+	global.toggle_pause()
+	animated_sprite.play(actualskin+"revive")
+	yield($AnimatedSprite,"animation_finished")
+	global.toggle_pause()
 
 func _physics_process(delta):
 	#shells
@@ -97,7 +104,7 @@ func _physics_process(delta):
 	update_animation()
 
 func update_animation():
-	var actualskin = global.skin
+	
 	if velocity.length_squared() > 0:
 		if abs(velocity.x) > abs(velocity.y):
 			if velocity.x > 0:
@@ -125,6 +132,12 @@ func recibir_danio(damage):
 		$AnimatedSprite.modulate = Color(3, 3, 3, 0.5)
 		$Inmunity.start()
 		if vida <= 0:
+			global.toggle_pause()
+			animated_sprite.play(actualskin+"die")
+			yield($AnimatedSprite,"animation_finished")
+			global.score = score_actual
+			var gameover = gameover_scene.instance()
+			$items.add_child(gameover)
 			# Aquí puedes añadir lógica para el manejo de la muerte del jugador
 			pass
 #METODO PARA LA POCION DE CURA
@@ -137,6 +150,7 @@ func curar_dano(cura):
 
 func add_exp(amount):
 	global.shells = global.shells + 1
+	score_actual = score_actual + 100
 	experience += amount
 	exp_progressbar.value = experience
 	if experience >= 10:
@@ -146,9 +160,6 @@ func add_exp(amount):
 		exp_progressbar.value = experience
 		pass
 	# Add any additional logic for level up or UI updates here
-
-# Método llamado cuando el Timer termina
-
 
 
 func _on_Button_pressed():

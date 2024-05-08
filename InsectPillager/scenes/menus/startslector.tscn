@@ -1,32 +1,32 @@
 [gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/Oseemono-V5Ez.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/light.png" type="Texture" id=2]
-[ext_resource path="res://scenes/startslector.gd" type="Script" id=3]
-[ext_resource path="res://assets/ui/cuevafondo.png" type="Texture" id=4]
-[ext_resource path="res://assets/PentaGrams Malefissent.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://assets/shadow.png" type="Texture" id=6]
+[ext_resource path="res://assets/PentaGrams Malefissent.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/weapon_free.png" type="Texture" id=3]
+[ext_resource path="res://scenes/menus/startslector.gd" type="Script" id=4]
+[ext_resource path="res://assets/shadow.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/cuevafondo.png" type="Texture" id=6]
 [ext_resource path="res://assets/ui/border.png" type="Texture" id=7]
-[ext_resource path="res://assets/weapon_free.png" type="Texture" id=8]
+[ext_resource path="res://assets/light.png" type="Texture" id=8]
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 8 )
+atlas = ExtResource( 3 )
 region = Rect2( 128, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 8 )
+atlas = ExtResource( 3 )
 region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 8 )
+atlas = ExtResource( 3 )
 region = Rect2( 96, 256, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 8 )
+atlas = ExtResource( 3 )
 region = Rect2( 224, 224, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 8 )
+atlas = ExtResource( 3 )
 region = Rect2( 128, 32, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=12]
@@ -63,29 +63,29 @@ animations = [ {
 } ]
 
 [sub_resource type="DynamicFont" id=13]
-size = 23
+size = 20
 outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
+outline_color = Color( 0, 0, 0, 0.698039 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxTexture" id=14]
-texture = ExtResource( 2 )
+texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 120, 120 )
 
 [sub_resource type="StyleBoxTexture" id=15]
-texture = ExtResource( 2 )
+texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 120, 120 )
 
 [sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 2 )
+texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 120, 120 )
 
 [sub_resource type="StyleBoxTexture" id=5]
-texture = ExtResource( 2 )
+texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 120, 120 )
 
 [sub_resource type="StyleBoxTexture" id=16]
-texture = ExtResource( 2 )
+texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 120, 120 )
 modulate_color = Color( 0, 0, 0, 1 )
 
@@ -98,29 +98,29 @@ font_data = ExtResource( 1 )
 size = 25
 outline_size = 1
 outline_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
-font_data = ExtResource( 5 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxTexture" id=8]
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="StyleBoxTexture" id=9]
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="StyleBoxTexture" id=10]
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="StyleBoxTexture" id=11]
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 32, 32 )
 
 [node name="selector" type="Node2D"]
 pause_mode = 2
 position = Vector2( -9, 0 )
 scale = Vector2( 2, 2 )
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 margin_left = -202.0
@@ -132,7 +132,7 @@ color = Color( 0, 0, 0, 0.352941 )
 [node name="Cuevafondo" type="Sprite" parent="."]
 position = Vector2( -35.75, -1 )
 scale = Vector2( 1.10081, 0.887097 )
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = 32.0

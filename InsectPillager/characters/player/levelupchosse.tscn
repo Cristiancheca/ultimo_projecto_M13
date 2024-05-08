@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/weapon_free.png" type="Texture" id=1]
 [ext_resource path="res://characters/player/levelupchosse.gd" type="Script" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://assets/shadow.png" type="Texture" id=5]
 [ext_resource path="res://assets/new_styleboxtexture.tres" type="StyleBox" id=6]
 [ext_resource path="res://assets/essence.png" type="Texture" id=7]
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 256, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
@@ -33,6 +37,11 @@ animations = [ {
 "frames": [  ],
 "loop": true,
 "name": "#default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ) ],
+"loop": true,
+"name": "axe",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 7 ) ],
@@ -114,7 +123,7 @@ texture = ExtResource( 5 )
 position = Vector2( -42.5, 15.008 )
 scale = Vector2( 2.031, 2.031 )
 frames = SubResource( 5 )
-animation = "crossbow"
+animation = "potion"
 
 [node name="option2" type="Button" parent="."]
 margin_left = 555.0
