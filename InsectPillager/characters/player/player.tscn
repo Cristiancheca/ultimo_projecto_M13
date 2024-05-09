@@ -802,13 +802,6 @@ texture = ExtResource( 5 )
 [node name="Inmunity" type="Timer" parent="."]
 wait_time = 0.6
 
-[node name="inmune_light" type="Sprite" parent="."]
-visible = false
-modulate = Color( 1, 1, 1, 0.745098 )
-position = Vector2( 0, 2.5 )
-scale = Vector2( 0.0916667, 0.175 )
-texture = ExtResource( 5 )
-
 [node name="Button" type="Button" parent="."]
 margin_left = 85.0
 margin_top = -62.5
