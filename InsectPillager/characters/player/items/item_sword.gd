@@ -15,7 +15,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if global.lvlswordbool == true:
-		sword_damage = sword_damage + 3
+		sword_damage = sword_damage + 2
+		print(str("SWORD DAMAGE: ",sword_damage))
 		global.lvlswordbool = false
 		pass
 

@@ -2,10 +2,10 @@
 
 [ext_resource path="res://scenes/mainmenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/ENDOR___.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/ui/button1.png" type="Texture" id=3]
 [ext_resource path="res://assets/tilesets/MainLev2.0.png" type="Texture" id=4]
 [ext_resource path="res://assets/tilesets/sewer_1.png" type="Texture" id=5]
 [ext_resource path="res://assets/Oseemono-V5Ez.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/light.png" type="Texture" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -1355,50 +1355,51 @@ outline_color = Color( 0.113725, 0.113725, 0.113725, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxTexture" id=28]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 64, 32 )
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 120, 120 )
 
 [sub_resource type="StyleBoxTexture" id=29]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 64, 32 )
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 120, 120 )
 
 [sub_resource type="StyleBoxTexture" id=30]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 64, 32 )
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 120, 120 )
 
 [sub_resource type="StyleBoxEmpty" id=31]
 
 [sub_resource type="StyleBoxTexture" id=32]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 64, 32 )
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 120, 120 )
+modulate_color = Color( 0.701961, 0.701961, 0.701961, 1 )
 
 [sub_resource type="StyleBoxTexture" id=33]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 64, 32 )
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 120, 120 )
 
 [sub_resource type="StyleBoxTexture" id=34]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 64, 32 )
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 120, 120 )
 
 [sub_resource type="StyleBoxTexture" id=35]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 64, 32 )
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 120, 120 )
 
 [sub_resource type="StyleBoxTexture" id=36]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 64, 32 )
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 120, 120 )
 
 [sub_resource type="StyleBoxTexture" id=37]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 64, 32 )
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 120, 120 )
 
 [sub_resource type="StyleBoxTexture" id=38]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 64, 32 )
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 120, 120 )
 
 [sub_resource type="DynamicFont" id=39]
 size = 55
-outline_size = 8
+outline_size = 9
 outline_color = Color( 0, 0, 0, 0.529412 )
 font_data = ExtResource( 2 )
 
@@ -1481,7 +1482,10 @@ margin_right = 905.0
 margin_bottom = 137.0
 custom_colors/font_color = Color( 0.866667, 1, 0.67451, 1 )
 custom_colors/font_color_shadow = Color( 0.403922, 0.494118, 0.360784, 1 )
-custom_constants/shadow_offset_x = 4
+custom_constants/shadow_offset_x = 3
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 0
 custom_fonts/font = SubResource( 39 )
 text = "I N S E C T   P I L  L  A G E R"
 

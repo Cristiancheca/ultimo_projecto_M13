@@ -8,27 +8,27 @@
 [ext_resource path="res://assets/new_styleboxtexture.tres" type="StyleBox" id=6]
 [ext_resource path="res://assets/essence.png" type="Texture" id=7]
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=182]
 atlas = ExtResource( 1 )
 region = Rect2( 256, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=183]
 atlas = ExtResource( 1 )
 region = Rect2( 128, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=184]
 atlas = ExtResource( 1 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=185]
 atlas = ExtResource( 1 )
 region = Rect2( 96, 256, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=186]
 atlas = ExtResource( 1 )
 region = Rect2( 224, 224, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=187]
 atlas = ExtResource( 1 )
 region = Rect2( 128, 32, 32, 32 )
 
@@ -39,32 +39,32 @@ animations = [ {
 "name": "#default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 8 ) ],
+"frames": [ SubResource( 182 ) ],
 "loop": true,
 "name": "axe",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 7 ) ],
+"frames": [ SubResource( 183 ) ],
 "loop": true,
 "name": "crossbow",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 1 ) ],
+"frames": [ SubResource( 184 ) ],
 "loop": true,
 "name": "dagger",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 2 ) ],
+"frames": [ SubResource( 185 ) ],
 "loop": true,
 "name": "manuscript",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ) ],
+"frames": [ SubResource( 186 ) ],
 "loop": true,
 "name": "potion",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 6 ) ],
+"frames": [ SubResource( 187 ) ],
 "loop": true,
 "name": "sword",
 "speed": 5.0

@@ -83,9 +83,9 @@ func _on_option1_pressed():
 			var sword = sword_scene.instance()
 			get_parent().add_child(sword)
 			global.lvlsword = global.lvlsword +1
-			global.lvlswordbool = true
 		else:
 			$option1.text = option1 +"+damage"
+			global.lvlswordbool = true
 			global.lvlsword = global.lvlsword +1
 		pass
 	if option1 == "dagger":
@@ -122,6 +122,7 @@ func _on_option2_pressed():
 			get_parent().add_child(sword)
 			global.lvlsword = global.lvlsword +1
 		else:
+			global.lvlswordbool = true
 			global.lvlsword = global.lvlsword +1
 			$option2.text = option2+"+damage"
 		pass
@@ -159,6 +160,7 @@ func _on_option3_pressed():
 			get_parent().add_child(sword)
 			global.lvlsword = global.lvlsword +1
 		else:
+			global.lvlswordbool = true
 			global.lvlsword = global.lvlsword +1
 			$option3.text = option3+" + damage"
 		pass

@@ -66,6 +66,7 @@ func _ready():
 			global.lvlcrossbow = global.lvlcrossbow +1
 	
 	if get_parent().name == "mercado":
+		$UI/itembar.visible = false
 		$items.visible = false
 		$UI/ProgressBar.visible = false
 		$UI/Label.visible = false
@@ -82,6 +83,7 @@ func _ready():
 	global.toggle_pause()
 
 func _physics_process(delta):
+	actualskin = global.skin
 	#shells
 	$UI/shells.text = str(global.shells)
 	#LEVELUP
@@ -102,6 +104,17 @@ func _physics_process(delta):
 
 	# Actualizar la animación del AnimatedSprite
 	update_animation()
+	
+	#itembar
+	if global.lvlsword >= 1:
+		$UI/itembar/icon.play("sword")
+		$UI/itembar/icon/Label.text = str(global.lvlsword)
+	if global.lvldagger >= 1:
+		$UI/itembar/icon2.play("dagger")
+		$UI/itembar/icon2/Label.text = str(global.lvldagger)
+	if global.lvlcrossbow >=1:
+		$UI/itembar/icon3.play("crossbow")
+		$UI/itembar/icon3/Label.text = str(global.lvlcrossbow)
 
 func update_animation():
 	
@@ -132,6 +145,7 @@ func recibir_danio(damage):
 		$AnimatedSprite.modulate = Color(3, 3, 3, 0.5)
 		$Inmunity.start()
 		if vida <= 0:
+			$UI.visible = false
 			global.toggle_pause()
 			animated_sprite.play(actualskin+"die")
 			yield($AnimatedSprite,"animation_finished")
@@ -142,8 +156,9 @@ func recibir_danio(damage):
 			pass
 #METODO PARA LA POCION DE CURA
 func curar_dano(cura):
-	vida += cura
-	vida_progressbar.value = vida
+	if vida < 100:
+		vida += cura
+		vida_progressbar.value = vida
 	pass
 
 # Método llamado cuando el Timer termina

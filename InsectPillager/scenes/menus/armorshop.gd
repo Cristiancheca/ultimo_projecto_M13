@@ -37,8 +37,8 @@ func _on_armor1_pressed():
 		global.toggle_pause()
 		queue_free()
 	if global.hasskin1 == false:
-		if global.shells >= 100:
-			global.shells = global.shells - 100
+		if global.shells >= 200:
+			global.shells = global.shells - 200
 			global.hasskin1 = true
 			global.skin = "1"
 			global.toggle_pause()
@@ -53,8 +53,8 @@ func _on_armor2_pressed():
 		global.toggle_pause()
 		queue_free()
 	if global.hasskin2 == false:
-		if global.shells >= 100:
-			global.shells = global.shells - 100
+		if global.shells >= 220:
+			global.shells = global.shells - 220
 			global.hasskin2 = true
 			global.skin = "2"
 			global.toggle_pause()

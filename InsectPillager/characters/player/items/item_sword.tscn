@@ -26,10 +26,10 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 71 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), null ],
+"frames": [ SubResource( 71 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
 "loop": true,
 "name": "swipe",
-"speed": 6.0
+"speed": 8.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=70]
