@@ -23,6 +23,7 @@ func _process(delta):
 func _on_Timer_timeout():
 	yield(get_tree(), "idle_frame")  # Wait for the current frame to finish processing
 	$AnimatedSprite.play("swipe")
+	$sound.play()
 	$Area2D.monitorable = true
 	$Area2D.monitoring = true
 	yield($AnimatedSprite, "animation_finished")

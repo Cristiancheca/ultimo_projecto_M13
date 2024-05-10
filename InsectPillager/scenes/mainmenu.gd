@@ -18,11 +18,13 @@ func _ready():
 
 
 func _on_play_pressed():
+	$buttonsound.play()
 	Transition.change_scene("res://scenes/mercado.tscn")
 	pass
 
 
 func _on_options_pressed():
+	$buttonsound.play()
 	show_and_hide(Options,MainMenu)
 
 
@@ -32,10 +34,12 @@ func show_and_hide(first,Second):
 
 
 func _on_exit_pressed():
+	$buttonsound.play()
 	get_tree().quit()
 
 
 func _on_Volver_al_menu_pressed():
+	$buttonsound.play()
 	show_and_hide(MainMenu,Options)
 
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/desert-sun-164212.mp3-154b1cd739e84c7f126b6dd8c5d4170c.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/desert-sun-164212.mp3"
+dest_files=[ "res://.import/desert-sun-164212.mp3-154b1cd739e84c7f126b6dd8c5d4170c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

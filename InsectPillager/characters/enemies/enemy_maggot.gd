@@ -59,6 +59,7 @@ func _on_Area2D_body_entered(body):
 # Método para recibir daño
 
 func recibir_danio(damage):
+	$damagesound.play()
 	vida -= damage
 	$blood.restart()
 	$blood.emitting = true

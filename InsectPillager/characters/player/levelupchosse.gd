@@ -78,6 +78,8 @@ func choose_random_item():
 
 
 func _on_option1_pressed():
+	$buttonsound.play()
+	yield($buttonsound, "finished")
 	if option1 == "sword":
 		if global.lvlsword == 0:
 			var sword = sword_scene.instance()
@@ -116,6 +118,8 @@ func _on_option1_pressed():
 
 
 func _on_option2_pressed():
+	$buttonsound.play()
+	yield($buttonsound, "finished")
 	if option2 == "sword":
 		if global.lvlsword == 0:
 			var sword = sword_scene.instance()
@@ -154,6 +158,8 @@ func _on_option2_pressed():
 
 
 func _on_option3_pressed():
+	$buttonsound.play()
+	yield($buttonsound, "finished")
 	if option3 == "sword":
 		if global.lvlsword == 0:
 			var sword = sword_scene.instance()

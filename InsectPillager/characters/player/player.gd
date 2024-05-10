@@ -145,6 +145,7 @@ func recibir_danio(damage):
 		$AnimatedSprite.modulate = Color(3, 3, 3, 0.5)
 		$Inmunity.start()
 		if vida <= 0:
+			$losesound.play()
 			$UI.visible = false
 			global.toggle_pause()
 			animated_sprite.play(actualskin+"die")

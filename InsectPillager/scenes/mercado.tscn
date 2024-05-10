@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://assets/tilesets/decorative.png" type="Texture" id=1]
 [ext_resource path="res://characters/player/player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://characters/Download40094.png" type="Texture" id=4]
 [ext_resource path="res://scenes/mercado.gd" type="Script" id=5]
 [ext_resource path="res://assets/Oseemono-V5Ez.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/sounds/music_village.mp3" type="AudioStream" id=7]
 [ext_resource path="res://assets/light.png" type="Texture" id=8]
 [ext_resource path="res://assets/ui/up.png" type="Texture" id=9]
 
@@ -1947,7 +1948,7 @@ modulate = Color( 1, 1, 1, 0.588235 )
 position = Vector2( 13, 17 )
 scale = Vector2( 1.56667, 1.54545 )
 frames = SubResource( 111 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="player" parent="." instance=ExtResource( 2 )]
@@ -1969,6 +1970,12 @@ custom_styles/disabled = SubResource( 103 )
 custom_styles/normal = SubResource( 104 )
 action_mode = 0
 text = "Armor Shop"
+
+[node name="ambience" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
+stream = ExtResource( 7 )
+volume_db = -12.0
+autoplay = true
 
 [connection signal="body_entered" from="shop/Areashop" to="." method="_on_Areashop_body_entered"]
 [connection signal="body_exited" from="shop/Areashop" to="." method="_on_Areashop_body_exited"]

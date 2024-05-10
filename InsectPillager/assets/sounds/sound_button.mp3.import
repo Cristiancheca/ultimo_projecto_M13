@@ -11,5 +11,5 @@ dest_files=[ "res://.import/sound_button.mp3-3842b79059553575e5b5060c54adf88e.mp
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

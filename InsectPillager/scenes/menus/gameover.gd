@@ -28,6 +28,8 @@ func _ready():
 
 
 func _on_exit_pressed():
+	$buttonsound.play()
+	yield($buttonsound, "finished")
 	global.toggle_pause()
 	Transition.change_scene("res://scenes/mercado.tscn")
 	pass # Replace with function body.

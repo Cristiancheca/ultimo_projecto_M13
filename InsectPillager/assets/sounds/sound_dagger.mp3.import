@@ -11,5 +11,5 @@ dest_files=[ "res://.import/sound_dagger.mp3-77256696585532abd82bfe23bd6a455b.mp
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -25,6 +25,8 @@ func _ready():
 
 
 func _on_armor0_pressed():
+	$buttonsound.play()
+	yield($buttonsound, "finished")
 	global.skin = "0"
 	global.toggle_pause()
 	queue_free()
@@ -32,6 +34,8 @@ func _on_armor0_pressed():
 
 
 func _on_armor1_pressed():
+	$buttonsound.play()
+	yield($buttonsound, "finished")
 	if global.hasskin1 == true:
 		global.skin = "1"
 		global.toggle_pause()
@@ -43,11 +47,15 @@ func _on_armor1_pressed():
 			global.skin = "1"
 			global.toggle_pause()
 			queue_free()
+		else:
+			$armors/armor1.modulate = Color(2, 1, 1, 1)
 	else:
 		pass
 
 
 func _on_armor2_pressed():
+	$buttonsound.play()
+	yield($buttonsound, "finished")
 	if global.hasskin2 == true:
 		global.skin = "2"
 		global.toggle_pause()
@@ -59,11 +67,15 @@ func _on_armor2_pressed():
 			global.skin = "2"
 			global.toggle_pause()
 			queue_free()
+		else:
+			$armors/armor2.modulate = Color(2, 1, 1, 1)
 	else:
 		pass
 
 
 func _on_close_pressed():
+	$buttonsound.play()
+	yield($buttonsound, "finished")
 	global.toggle_pause()
 	queue_free()
 	pass # Replace with function body.

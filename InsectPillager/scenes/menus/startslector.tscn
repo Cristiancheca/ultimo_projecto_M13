@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/Oseemono-V5Ez.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/PentaGrams Malefissent.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/ui/cuevafondo.png" type="Texture" id=6]
 [ext_resource path="res://assets/ui/border.png" type="Texture" id=7]
 [ext_resource path="res://assets/light.png" type="Texture" id=8]
+[ext_resource path="res://assets/sounds/sound_button.mp3" type="AudioStream" id=9]
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 3 )
@@ -226,6 +227,10 @@ custom_styles/pressed = SubResource( 9 )
 custom_styles/focus = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 text = "X"
+
+[node name="buttonsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+bus = "Effects"
 
 [connection signal="pressed" from="sword_button" to="." method="_on_sword_button_pressed"]
 [connection signal="pressed" from="dagger_button" to="." method="_on_dagger_button_pressed"]

@@ -6,6 +6,7 @@ extends Node
 # var b = "text"
 var is_paused = false
 var actualhp
+var buttonon = false
 #SKIN PLAYER
 var skin = "0"
 var hasskin1 = false

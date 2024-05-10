@@ -21,6 +21,8 @@ func _ready():
 
 
 func _on_sword_button_pressed():
+	$buttonsound.play()
+	yield($buttonsound, "finished")
 	global.toggle_pause()
 	global.startweapon = "sword"
 	Transition.change_scene("res://scenes/level.tscn")
@@ -28,6 +30,8 @@ func _on_sword_button_pressed():
 
 
 func _on_dagger_button_pressed():
+	$buttonsound.play()
+	yield($buttonsound, "finished")
 	global.toggle_pause()
 	global.startweapon = "dagger"
 	Transition.change_scene("res://scenes/level.tscn")
@@ -35,6 +39,8 @@ func _on_dagger_button_pressed():
 
 
 func _on_crossbow_button_pressed():
+	$buttonsound.play()
+	yield($buttonsound, "finished")
 	global.toggle_pause()
 	global.startweapon = "crossbow"
 	Transition.change_scene("res://scenes/level.tscn")
@@ -42,5 +48,7 @@ func _on_crossbow_button_pressed():
 
 
 func _on_Button_pressed():
+	$buttonsound.play()
+	yield($buttonsound, "finished")
 	global.toggle_pause()
 	queue_free()

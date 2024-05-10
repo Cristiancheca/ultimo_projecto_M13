@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://scenes/menus/armorshop.gd" type="Script" id=1]
 [ext_resource path="res://assets/Oseemono-V5Ez.ttf" type="DynamicFontData" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://characters/player/skins/Download28410.png" type="Texture" id=7]
 [ext_resource path="res://characters/player/skins/Download17236.png" type="Texture" id=8]
 [ext_resource path="res://characters/Download40094.png" type="Texture" id=9]
+[ext_resource path="res://assets/sounds/sound_button.mp3" type="AudioStream" id=10]
 
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 9 )
@@ -218,7 +219,7 @@ position = Vector2( 112, 38.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 39 )
 animation = "New Anim"
-frame = 2
+frame = 1
 playing = true
 
 [node name="armors" type="Control" parent="."]
@@ -244,6 +245,7 @@ text = "soldier armor"
 position = Vector2( 31, -35 )
 frames = SubResource( 30 )
 animation = "armor0"
+frame = 5
 playing = true
 
 [node name="armor1" type="Button" parent="armors"]
@@ -264,6 +266,7 @@ text = "hooded armor"
 position = Vector2( 31, -35 )
 frames = SubResource( 30 )
 animation = "armor1"
+frame = 5
 playing = true
 
 [node name="worth" type="Label" parent="armors/armor1"]
@@ -293,6 +296,7 @@ text = "northern armor"
 position = Vector2( 31, -35 )
 frames = SubResource( 30 )
 animation = "armor2"
+frame = 5
 playing = true
 
 [node name="worth" type="Label" parent="armors/armor2"]
@@ -316,6 +320,10 @@ custom_styles/pressed = SubResource( 33 )
 custom_styles/focus = SubResource( 34 )
 custom_styles/normal = SubResource( 35 )
 text = "X"
+
+[node name="buttonsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+bus = "Effects"
 
 [connection signal="pressed" from="armors/armor0" to="." method="_on_armor0_pressed"]
 [connection signal="pressed" from="armors/armor1" to="." method="_on_armor1_pressed"]

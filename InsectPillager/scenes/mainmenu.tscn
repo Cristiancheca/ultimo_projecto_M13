@@ -1,11 +1,13 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://scenes/mainmenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/ENDOR___.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/sounds/music_background1.mp3" type="AudioStream" id=3]
 [ext_resource path="res://assets/tilesets/MainLev2.0.png" type="Texture" id=4]
 [ext_resource path="res://assets/tilesets/sewer_1.png" type="Texture" id=5]
 [ext_resource path="res://assets/Oseemono-V5Ez.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/light.png" type="Texture" id=7]
+[ext_resource path="res://assets/sounds/sound_button.mp3" type="AudioStream" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -1427,6 +1429,15 @@ tile_set = SubResource( 40 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 0, 17, 0, 1, 12, 0, 2, 12, 0, 3, 12, 0, 4, 12, 0, 5, 12, 0, 6, 12, 0, 7, 16, 0, 65536, 10, 0, 65543, 8, 0, 131072, 10, 0, 131079, 8, 0, 196608, 10, 0, 196615, 8, 0, 262144, 15, 0, 262145, 6, 0, 262146, 6, 0, 262147, 6, 0, 262148, 6, 0, 262149, 6, 0, 262150, 6, 0, 262151, 14, 0, 262174, 8, 0, 327710, 8, 0, 393246, 8, 0, 458782, 8, 0, 524318, 8, 0, 589854, 11, 0, 589855, 16, 0, 655391, 8, 0, 720924, 10, 0, 720927, 8, 0, 786460, 10, 0, 786463, 8, 0, 851996, 10, 0, 851999, 8, 0 )
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+bus = "Music"
+
+[node name="buttonsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+bus = "Effects"
 
 [node name="Menu" type="Control" parent="."]
 margin_top = 33.0

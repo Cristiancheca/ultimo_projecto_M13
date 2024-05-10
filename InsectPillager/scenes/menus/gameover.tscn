@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/Oseemono-V5Ez.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/PentaGrams Malefissent.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/menus/gameover.gd" type="Script" id=3]
 [ext_resource path="res://assets/light.png" type="Texture" id=4]
+[ext_resource path="res://assets/sounds/sound_button.mp3" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=4]
 size = 20
@@ -135,5 +136,9 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 9 )
 custom_styles/normal = SubResource( 10 )
 text = "E X I T"
+
+[node name="buttonsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+bus = "Effects"
 
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
