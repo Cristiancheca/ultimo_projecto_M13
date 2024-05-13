@@ -13,7 +13,7 @@ func _ready():
 	global.lvldagger = 0
 	global.lvlsword = 0
 	global.lvlswordbool = false
-	
+	global.startweapon = ""
 	global.enemylvl = 1
 	
 	#RELLENAR ELS LABELS SCORE I SHELLS

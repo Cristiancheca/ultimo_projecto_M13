@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cave-dreamy-soundscape-63829.mp3-6c1f007e6141143c05c9918f91c5698d.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/cave-dreamy-soundscape-63829.mp3"
+dest_files=[ "res://.import/cave-dreamy-soundscape-63829.mp3-6c1f007e6141143c05c9918f91c5698d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

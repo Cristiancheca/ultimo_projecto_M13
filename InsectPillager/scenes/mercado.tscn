@@ -7,7 +7,7 @@
 [ext_resource path="res://scenes/mercado.gd" type="Script" id=5]
 [ext_resource path="res://assets/Oseemono-V5Ez.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/sounds/music_village.mp3" type="AudioStream" id=7]
-[ext_resource path="res://assets/light.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/Sprite-0001.png" type="Texture" id=8]
 [ext_resource path="res://assets/ui/up.png" type="Texture" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=98]
@@ -1859,29 +1859,28 @@ animations = [ {
 } ]
 
 [sub_resource type="DynamicFont" id=99]
-size = 22
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 6 )
 
 [sub_resource type="StyleBoxTexture" id=100]
 texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 120, 120 )
+region_rect = Rect2( 0, 0, 32, 16 )
 
 [sub_resource type="StyleBoxTexture" id=101]
 texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 120, 120 )
+region_rect = Rect2( 0, 0, 32, 16 )
 
 [sub_resource type="StyleBoxEmpty" id=105]
 
 [sub_resource type="StyleBoxTexture" id=103]
 texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 120, 120 )
-modulate_color = Color( 0.407843, 0.407843, 0.407843, 1 )
+region_rect = Rect2( 0, 0, 32, 16 )
+modulate_color = Color( 0.745098, 0.745098, 0.745098, 1 )
 
 [sub_resource type="StyleBoxTexture" id=104]
 texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 120, 120 )
+region_rect = Rect2( 0, 0, 32, 16 )
 
 [node name="mercado" type="Node2D"]
 script = ExtResource( 5 )
@@ -1948,18 +1947,19 @@ modulate = Color( 1, 1, 1, 0.588235 )
 position = Vector2( 13, 17 )
 scale = Vector2( 1.56667, 1.54545 )
 frames = SubResource( 111 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 298, 364 )
 
 [node name="shopbutton" type="Button" parent="."]
-margin_left = 310.0
-margin_top = 218.0
-margin_right = 379.0
-margin_bottom = 241.0
-custom_colors/font_color_disabled = Color( 0.32549, 0.32549, 0.32549, 1 )
+margin_left = 314.0
+margin_top = 221.0
+margin_right = 363.0
+margin_bottom = 237.0
+rect_scale = Vector2( 1.2, 1.1 )
+custom_colors/font_color_disabled = Color( 0.694118, 0.694118, 0.694118, 1 )
 custom_colors/font_color_hover = Color( 0.964706, 1, 0.670588, 1 )
 custom_colors/font_color_pressed = Color( 1, 0.92549, 0.341176, 1 )
 custom_fonts/font = SubResource( 99 )

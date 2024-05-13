@@ -161,6 +161,10 @@ func curar_dano(cura):
 		vida += cura
 		vida_progressbar.value = vida
 	pass
+#METODO POCION DE SPEED
+func more_speed(plusspeed):
+	speed += plusspeed
+	pass
 
 # Método llamado cuando el Timer termina
 

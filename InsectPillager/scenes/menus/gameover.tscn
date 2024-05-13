@@ -1,10 +1,12 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/Oseemono-V5Ez.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/PentaGrams Malefissent.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/menus/gameover.gd" type="Script" id=3]
-[ext_resource path="res://assets/light.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/button1.png" type="Texture" id=4]
 [ext_resource path="res://assets/sounds/sound_button.mp3" type="AudioStream" id=5]
+[ext_resource path="res://assets/essence.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/shell_icon.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=4]
 size = 20
@@ -25,28 +27,28 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 52
-outline_size = 5
-outline_color = Color( 0.192157, 0.117647, 0.117647, 1 )
+outline_size = 3
+outline_color = Color( 0.0313726, 0.0196078, 0.0196078, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 120, 120 )
+region_rect = Rect2( 0, 0, 64, 32 )
 
 [sub_resource type="StyleBoxTexture" id=7]
 texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 120, 120 )
+region_rect = Rect2( 0, 0, 64, 32 )
 
 [sub_resource type="StyleBoxTexture" id=8]
 texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 120, 120 )
+region_rect = Rect2( 0, 0, 64, 32 )
 
 [sub_resource type="StyleBoxEmpty" id=9]
 
 [sub_resource type="StyleBoxTexture" id=10]
 texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 120, 120 )
-modulate_color = Color( 0.780392, 0.780392, 0.780392, 1 )
+region_rect = Rect2( 0, 0, 64, 32 )
+modulate_color = Color( 0.792157, 0.792157, 0.792157, 1 )
 
 [node name="gameover" type="Node2D"]
 pause_mode = 2
@@ -68,67 +70,79 @@ margin_bottom = 18.0
 rect_scale = Vector2( 2, 2 )
 
 [node name="scoretitle2" type="Label" parent="Control"]
-margin_left = -388.0
+margin_left = -383.0
 margin_top = 10.0
-margin_right = 389.0
+margin_right = 394.0
 margin_bottom = 114.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 4
+custom_colors/font_color_shadow = Color( 0.411765, 0.298039, 0.113725, 1 )
+custom_constants/shadow_offset_x = 1
 custom_fonts/font = SubResource( 4 )
 text = "shells:"
 align = 1
 
 [node name="shells" type="Label" parent="Control/scoretitle2"]
-margin_left = 368.0
+margin_left = 364.0
 margin_top = 28.0
-margin_right = 408.0
+margin_right = 404.0
 margin_bottom = 46.0
 custom_colors/font_color = Color( 0.447059, 0.447059, 0.447059, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "1000"
 align = 1
 
+[node name="ShellIcon" type="Sprite" parent="Control/scoretitle2"]
+modulate = Color( 1, 1, 1, 0.764706 )
+position = Vector2( 351, 16 )
+scale = Vector2( 0.6875, 0.777344 )
+texture = ExtResource( 7 )
+
 [node name="title" type="Label" parent="Control"]
 margin_left = -67.0
-margin_top = -67.0
+margin_top = -68.25
 margin_right = 68.0
-margin_bottom = -31.0
+margin_bottom = -32.25
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.901961, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "GAME OVER"
 
 [node name="scoretitle" type="Label" parent="Control"]
-margin_left = -26.0
-margin_top = -30.0
-margin_right = 751.0
-margin_bottom = 74.0
+margin_left = -20.0
+margin_top = -30.25
+margin_right = 757.0
+margin_bottom = 73.75
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 4
+custom_colors/font_color_shadow = Color( 0.521569, 0.521569, 0.521569, 1 )
+custom_constants/shadow_offset_x = 1
 custom_fonts/font = SubResource( 4 )
 text = "score:"
 
 [node name="score" type="Label" parent="Control/scoretitle"]
-margin_left = 6.0
+margin_left = 1.0
 margin_top = 24.0
-margin_right = 46.0
+margin_right = 41.0
 margin_bottom = 42.0
 custom_colors/font_color = Color( 0.447059, 0.447059, 0.447059, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "1000"
 align = 1
 
+[node name="Essence" type="Sprite" parent="Control/scoretitle"]
+modulate = Color( 1, 1, 1, 0.764706 )
+position = Vector2( -8, 13.75 )
+scale = Vector2( 0.8, 0.875 )
+texture = ExtResource( 6 )
+
 [node name="exit" type="Button" parent="."]
-margin_left = -74.0
+margin_left = -70.0
 margin_top = 88.0
-margin_right = 173.0
-margin_bottom = 175.0
+margin_right = 163.0
+margin_bottom = 151.0
 rect_scale = Vector2( 0.6, 0.759999 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 0.364706, 0.364706, 1 )
-custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 0.682353, 0.682353, 0.682353, 1 )
+custom_colors/font_color_hover = Color( 0.909804, 0.909804, 0.909804, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 5 )
 custom_styles/hover = SubResource( 6 )
 custom_styles/pressed = SubResource( 7 )
