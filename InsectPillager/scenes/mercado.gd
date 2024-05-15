@@ -18,6 +18,7 @@ func _ready():
 #	pass
 
 
+#El codigo que hace aparecer al personaje principal 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		var player = get_node("player")
@@ -37,7 +38,7 @@ func _on_Areashop_body_exited(body):
 		$shopbutton.disabled = true
 	pass # Replace with function body.
 
-
+#Una vez clicas el boton de la tienda de armaduras se abre el menu de las armaduras para poder comprarlas
 func _on_shopbutton_pressed():
 	var player = get_node("player")
 	var armorshop0 = armorshop.instance()

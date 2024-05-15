@@ -26,7 +26,7 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
+#sale del menu de game over
 func _on_exit_pressed():
 	$buttonsound.play()
 	yield($buttonsound, "finished")

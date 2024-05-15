@@ -23,7 +23,7 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
+#al clicar la aramadura 0 o mejor dicho la deafault se pone resta misma 
 func _on_armor0_pressed():
 	$buttonsound.play()
 	yield($buttonsound, "finished")
@@ -32,7 +32,7 @@ func _on_armor0_pressed():
 	queue_free()
 	pass # Replace with function body.
 
-
+#Al clicar la armadura 1 si tienes suficientes "shells" se pondra pero si no tienes suficientes no se pondra 
 func _on_armor1_pressed():
 	$buttonsound.play()
 	yield($buttonsound, "finished")
@@ -52,7 +52,7 @@ func _on_armor1_pressed():
 	else:
 		pass
 
-
+#Al clicar la armadura 2 si tienes suficientes "shells" se pondra pero si no tienes suficientes no se pondra 
 func _on_armor2_pressed():
 	$buttonsound.play()
 	yield($buttonsound, "finished")
@@ -72,7 +72,7 @@ func _on_armor2_pressed():
 	else:
 		pass
 
-
+#Este boton es para cerrar la ventana de las armaduras
 func _on_close_pressed():
 	$buttonsound.play()
 	yield($buttonsound, "finished")

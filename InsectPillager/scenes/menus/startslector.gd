@@ -19,7 +19,7 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
+#Al presionar el boton de la espada te pone esa arma
 func _on_sword_button_pressed():
 	$buttonsound.play()
 	yield($buttonsound, "finished")
@@ -28,7 +28,7 @@ func _on_sword_button_pressed():
 	Transition.change_scene("res://scenes/level.tscn")
 	pass # Replace with function body.
 
-
+#Al presionar el boton de la daga te pone esa arma
 func _on_dagger_button_pressed():
 	$buttonsound.play()
 	yield($buttonsound, "finished")
@@ -37,7 +37,7 @@ func _on_dagger_button_pressed():
 	Transition.change_scene("res://scenes/level.tscn")
 	pass # Replace with function body.
 
-
+#Al presionar el boton de la ballesta te pone esa arma
 func _on_crossbow_button_pressed():
 	$buttonsound.play()
 	yield($buttonsound, "finished")
