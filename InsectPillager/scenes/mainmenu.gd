@@ -37,12 +37,6 @@ func _on_exit_pressed():
 	$buttonsound.play()
 	get_tree().quit()
 
-
-func _on_Volver_al_menu_pressed():
-	$buttonsound.play()
-	show_and_hide(MainMenu,Options)
-
-
 func _on_CheckBox_toggled(button_pressed):
 	OS.window_fullscreen = button_pressed
 
@@ -61,3 +55,8 @@ func _on_Music_value_changed(value):
 
 func _on_Efects_value_changed(value):
 	Volumen(2,value)
+
+
+func _on_Volver_al_menu_pressed():
+	$buttonsound.play()
+	show_and_hide(MainMenu,Options)
