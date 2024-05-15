@@ -1,4 +1,4 @@
-[gd_scene load_steps=185 format=2]
+[gd_scene load_steps=186 format=2]
 
 [ext_resource path="res://characters/player/skins/Download28410.png" type="Texture" id=1]
 [ext_resource path="res://characters/player/player.gd" type="Script" id=2]
@@ -840,6 +840,9 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 6 )
 
+[sub_resource type="DynamicFont" id=190]
+font_data = ExtResource( 6 )
+
 [node name="player" type="KinematicBody2D" groups=["player"]]
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
@@ -875,13 +878,6 @@ texture = ExtResource( 5 )
 
 [node name="Inmunity" type="Timer" parent="."]
 wait_time = 0.6
-
-[node name="Button" type="Button" parent="."]
-margin_left = 85.0
-margin_top = -62.5
-margin_right = 121.0
-margin_bottom = -42.5
-text = "GET"
 
 [node name="UI" type="Control" parent="."]
 margin_left = -129.0
@@ -1006,6 +1002,21 @@ stream = ExtResource( 13 )
 volume_db = -5.0
 bus = "Music"
 
+[node name="intro" type="Label" parent="."]
+margin_left = 24.0
+margin_top = -62.5
+margin_right = 191.0
+margin_bottom = -31.5
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = SubResource( 190 )
+text = "Move with w,a,s,d or with
+ arrow keys on pc"
+align = 2
+
+[node name="no intro" type="Timer" parent="intro"]
+wait_time = 6.0
+autostart = true
+
 [connection signal="timeout" from="Inmunity" to="." method="_on_Inmunity_timeout"]
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="timeout" from="UI/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="intro/no intro" to="." method="_on_no_intro_timeout"]

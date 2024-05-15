@@ -2,7 +2,7 @@ extends KinematicBody2D
 #VARIABLE PARA SCRIPT GLOBAL
 var global
 # Variables para el movimiento
-var speed = 130
+var speed = 100
 var velocity = Vector2()
 
 # Variables para la vida del jugador
@@ -182,11 +182,6 @@ func add_exp(amount):
 	# Add any additional logic for level up or UI updates here
 
 
-func _on_Button_pressed():
-	add_exp(10)
-#	var item_instance = item_sword.instance()
-#	$items.add_child(item_instance)
-	pass # Replace with function body.
 
 
 func _on_Timer_timeout():
@@ -208,4 +203,9 @@ func _on_Inmunity_timeout():
 	# Return the AnimatedSprite to its normal color
 	$AnimatedSprite.modulate = Color(1, 1, 1, 1)
 	inmune = false
+	pass # Replace with function body.
+
+
+func _on_no_intro_timeout():
+	$intro.visible = false
 	pass # Replace with function body.

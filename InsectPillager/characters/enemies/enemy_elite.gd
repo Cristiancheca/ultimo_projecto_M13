@@ -1,7 +1,7 @@
 extends KinematicBody2D
 var global
 # Variables para el movimiento
-var speed = 60  # Adjust as needed
+var speed = 30  # Adjust as needed
 var player = null
 var exp_orb_scene = preload("res://characters/ExpOrb.tscn")
 # Variables para el daño
