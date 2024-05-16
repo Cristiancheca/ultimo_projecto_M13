@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const SPEED = 150
-var DAMAGE = 10
+var DAMAGE = 15
 const INFINITY = 999
 var direction = Vector2.ZERO
 var target_enemy = null
@@ -10,7 +10,7 @@ var global
 func _ready():
 	global = get_node("/root/global")
 	if global.lvldagger >= 1:
-		DAMAGE = DAMAGE * global.lvldagger
+		DAMAGE = DAMAGE + global.lvldagger + global.lvldagger
 		
 	# Buscar el enemigo más cercano
 	var enemies = get_tree().get_nodes_in_group("enemy")
