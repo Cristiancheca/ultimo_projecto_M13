@@ -18,7 +18,7 @@ func _ready():
 #	pass
 
 
-#El codigo que hace aparecer al personaje principal 
+#El codigo que hace aparecer el menu de arma inicial
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		var player = get_node("player")

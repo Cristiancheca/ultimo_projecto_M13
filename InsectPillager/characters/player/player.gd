@@ -99,6 +99,10 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
 	
+	if Input.is_action_pressed("escape"):
+		get_tree().quit()
+		
+		
 	velocity = velocity.normalized() * speed
 	move_and_slide(velocity)
 

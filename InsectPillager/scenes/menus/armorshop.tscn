@@ -219,7 +219,6 @@ position = Vector2( 112, 38.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 39 )
 animation = "New Anim"
-frame = 2
 playing = true
 
 [node name="armors" type="Control" parent="."]
