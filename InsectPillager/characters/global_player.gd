@@ -12,7 +12,7 @@ var skin = "0"
 var hasskin1 = false
 var hasskin2 = false
 #CURRENCY
-var shells = 100
+var shells = 200
 
 #DURING EACH RUN
 var score = 0
